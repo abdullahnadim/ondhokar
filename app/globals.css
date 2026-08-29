@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ondhokar-bg: #F9F9F8;
+  --color-ondhokar-text: #171717;
+  --color-ondhokar-muted: #737373;
+  --color-ondhokar-border: #E5E5E5;
+  --color-ondhokar-outage: #18181B;
+  --color-ondhokar-available: #E4E4E7;
+  --color-ondhokar-accent: #D97706;
+
+  --shadow-utility: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+
+  --font-sans: var(--font-inter), var(--font-noto-bengali), sans-serif;
+}
