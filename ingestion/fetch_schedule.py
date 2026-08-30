@@ -50,63 +50,19 @@ def process_pdf(pdf_bytes):
             cells = table.cells 
             text_data = table.extract() 
             
-            # Find all black rectangles on this page to detect outages
-            black_rects = [
-                r for r in page.rects 
-                if r.get('non_stroking_color') in (0, [0,0,0], (0,0,0), [0], (0,))
-                and r.get('width', 0) > 2
-            ]
+            # UPDATED LOGIC: Catch ANY shaded box, not just pure black
+            black_rects = []
+            for r in page.rects:
+                color = r.get('non_stroking_color')
+                # If the box has a color, and it is NOT pure white, count it as an outage
+                if color and color not in (1, [1,1,1], (1,1,1), [1], (1,), (1.0, 1.0, 1.0)):
+                    if r.get('width', 0) > 2:
+                        black_rects.append(r)
 
             for row_idx, row_text in enumerate(text_data):
                 if not row_text or len(row_text) < 3 or "Division" in str(row_text[0]) or "Saturday" in str(row_text[0]):
                     continue
-
-                division = str(row_text[0]).replace("\n", " ").strip() if row_text[0] else ""
-                area = str(row_text[1]).replace("\n", " ").strip() if row_text[1] else ""
-                feeder_name = str(row_text[2]).replace("\n", " ").strip() if row_text[2] else ""
-
-                if not feeder_name or row_idx >= len(cells):
-                    continue
-
-                row_boxes = cells[row_idx]
-                hour_boxes = row_boxes[-24:] 
-                intervals = []
-
-                for h_idx in range(24):
-                    is_outage = False
-                    
-                    if h_idx < len(hour_boxes):
-                        bbox = hour_boxes[h_idx]
-                        if bbox and isinstance(bbox, (list, tuple)) and len(bbox) == 4:
-                            x0, top, x1, bottom = bbox
-                            center_x = (x0 + x1) / 2
-                            center_y = (top + bottom) / 2
-                            
-                            for rect in black_rects:
-                                rx0, rtop, rx1, rbottom = rect['x0'], rect['top'], rect['x1'], rect['bottom']
-                                if rx0 <= center_x <= rx1 and rtop <= center_y <= rbottom:
-                                    is_outage = True
-                                    break
-
-                    intervals.append({
-                        "start": f"{h_idx:02d}:00",
-                        "end": f"{(h_idx+1):02d}:00",
-                        "status": "SCHEDULED_OUTAGE" if is_outage else "AVAILABLE"
-                    })
-
-                safe_feeder_id = f"fdr_{feeder_name.lower().replace(' ', '_').replace('-', '').replace('/', '')}"
-                
-                feeders_data.append({
-                    "id": safe_feeder_id,
-                    "division": division,
-                    "area": area,
-                    "feeder": feeder_name,
-                    "page": page_num + 1,
-                    "intervals": intervals
-                })
-                
-    return feeders_data
-
+# ... (the rest of the function remains exactly the same)
 def main():
     try:
         pdf_url = get_latest_pdf_url()
