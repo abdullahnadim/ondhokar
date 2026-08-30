@@ -13,6 +13,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://ondhokar.vercel.app'),
   title: 'Ondhokar | DESCO Schedule',
   description: 'Check your scheduled DESCO load-shedding hours instantly. A fast, minimal tracker for Dhaka electricity schedules.',
   keywords: ['DESCO', 'Load Shedding', 'Dhaka', 'Electricity Schedule', 'Ondhokar', 'Power Outage', 'Bangladesh'],

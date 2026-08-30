@@ -185,7 +185,7 @@ export default function Home() {
                    <h4 className="font-bold mb-2 dark:text-zinc-200">Source</h4>
                    <p className="text-ondhokar-muted dark:text-zinc-400 font-medium">
                      Dhaka Electricity Supply PLC (DESCO)<br/>
-                     Document: 35aad7b3-a4f6-4c8f-9605-11a82332e69b.pdf<br/>
+                     Document: {descoData.metadata?.document_name || 'Latest Load Shedding Schedule'}<br/>
                      Load Shedding Schedule on 11 KV feeders — Page {selectedFeederData.page}
                    </p>
                  </div>

@@ -16,15 +16,25 @@ def get_latest_pdf_url():
     response = requests.get(DESCO_URL, verify=False)
     soup = BeautifulSoup(response.text, 'html.parser')
     
+    pdf_links = []
     for a in soup.find_all('a', href=True):
         if '.pdf' in a['href'].lower():
             pdf_link = a['href']
             if pdf_link.startswith('/'):
                 pdf_link = "https://desco.gov.bd" + pdf_link
-            print(f"📄 Found latest PDF schedule: {pdf_link}")
-            return pdf_link
+            pdf_links.append(pdf_link)
             
-    raise Exception("Could not find a PDF link on the DESCO page.")
+    if not pdf_links:
+        raise Exception("Could not find a PDF link on the DESCO page.")
+        
+    print(f"📊 Found {len(pdf_links)} total PDFs on the page.")
+    for idx, link in enumerate(pdf_links):
+        print(f"   [{idx}] {link.split('/')[-1]}")
+        
+    # Grab the FIRST PDF in the list (newest upload is at the top!)
+    latest_pdf = pdf_links[0]
+    print(f"\n✅ Selected newest PDF: {latest_pdf}")
+    return latest_pdf
 
 def process_pdf(pdf_bytes):
     print("🔍 Extracting visual and text data using pdfplumber...")
@@ -48,7 +58,6 @@ def process_pdf(pdf_bytes):
             ]
 
             for row_idx, row_text in enumerate(text_data):
-                # Defensively skip bad rows
                 if not row_text or len(row_text) < 3 or "Division" in str(row_text[0]) or "Saturday" in str(row_text[0]):
                     continue
 
@@ -63,14 +72,11 @@ def process_pdf(pdf_bytes):
                 hour_boxes = row_boxes[-24:] 
                 intervals = []
 
-                # Ensure we strictly iterate 24 times for the 24 hours
                 for h_idx in range(24):
                     is_outage = False
                     
-                    # Defensively check the bounding box structure
                     if h_idx < len(hour_boxes):
                         bbox = hour_boxes[h_idx]
-                        # Verify it is actually a coordinate tuple and not a float/None
                         if bbox and isinstance(bbox, (list, tuple)) and len(bbox) == 4:
                             x0, top, x1, bottom = bbox
                             center_x = (x0 + x1) / 2
@@ -104,6 +110,7 @@ def process_pdf(pdf_bytes):
 def main():
     try:
         pdf_url = get_latest_pdf_url()
+        document_name = pdf_url.split('/')[-1] # Extracts "9731b47e-db13..." from the URL
         print("📥 Downloading PDF...")
         response = requests.get(pdf_url, verify=False)
         
@@ -112,7 +119,11 @@ def main():
         
         output_path = "../data/desco-database.json"
         with open(output_path, "w", encoding="utf-8") as f:
-            json.dump({"feeders": feeders}, f, indent=2, ensure_ascii=False)
+            # Save the document name in the JSON alongside the feeders!
+            json.dump({
+                "metadata": {"document_name": document_name}, 
+                "feeders": feeders
+            }, f, indent=2, ensure_ascii=False)
             
         print(f"🚀 Data successfully written to {output_path}")
 
