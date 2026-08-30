@@ -2,9 +2,7 @@ name: Update DESCO Schedule
 
 on:
   schedule:
-    # Runs at 06:00 UTC, which is exactly 12:00 PM (Noon) Bangladesh Time
     - cron: '0 6 * * *'
-  # This specific line creates the manual "Run Workflow" button in GitHub!
   workflow_dispatch: 
 
 jobs:
@@ -12,16 +10,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
-      - name: Install dependencies
+      - name: Install dependencies and Playwright
         run: |
-          pip install requests beautifulsoup4 pdfplumber
+          pip install requests beautifulsoup4 pdfplumber playwright
+          playwright install chromium
 
       - name: Run Extraction Engine
         run: |
@@ -33,4 +32,8 @@ jobs:
           git config --global user.name "Ondhokar Bot"
           git config --global user.email "bot@ondhokar.com"
           git add data/desco-database.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "data: auto-update DESCO schedule" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "data: auto-update schedule via Playwright" && git push)
+          
+      - name: Trigger Vercel Deployment
+        if: success()
+        run: curl -X POST "https://api.vercel.com/v1/integrations/deploy/prj_FlHzXbTGbtQcEwUig7VWQRps8s3C/x6FtjRaznS"
