@@ -2,9 +2,10 @@ name: Update DESCO Schedule
 
 on:
   schedule:
-    # Runs at 6:00 AM Bangladesh time every day (00:00 UTC)
-    - cron: '0 0 * * *'
-  workflow_dispatch: # Allows you to trigger it manually
+    # Runs at 06:00 UTC, which is exactly 12:00 PM (Noon) Bangladesh Time
+    - cron: '0 6 * * *'
+  # This specific line creates the manual "Run Workflow" button in GitHub!
+  workflow_dispatch: 
 
 jobs:
   update-data:
@@ -27,7 +28,7 @@ jobs:
           cd ingestion
           python fetch_schedule.py
 
-      - name: Commit and push changes if data updated
+      - name: Commit and push changes
         run: |
           git config --global user.name "Ondhokar Bot"
           git config --global user.email "bot@ondhokar.com"
