@@ -1,93 +1,50 @@
-import requests
-from bs4 import BeautifulSoup
 import pdfplumber
 import json
-import io
-import urllib3
 import traceback
 
-# Suppress SSL warnings
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-
-DESCO_URL = "https://desco.gov.bd/pages/static-pages/69db2a3c6a42b12e9344d1f1"
-
-def get_latest_pdf_url():
-    print("🌐 Fetching DESCO static page...")
-    response = requests.get(DESCO_URL, verify=False)
-    soup = BeautifulSoup(response.text, 'html.parser')
-    
-    pdf_links = []
-    for a in soup.find_all('a', href=True):
-        if '.pdf' in a['href'].lower():
-            pdf_link = a['href']
-            if pdf_link.startswith('/'):
-                pdf_link = "https://desco.gov.bd" + pdf_link
-            pdf_links.append(pdf_link)
-            
-    if not pdf_links:
-        raise Exception("Could not find a PDF link on the DESCO page.")
-        
-    print(f"📊 Found {len(pdf_links)} total PDFs on the page.")
-    for idx, link in enumerate(pdf_links):
-        print(f"   [{idx}] {link.split('/')[-1]}")
-        
-    # Grab the FIRST PDF in the list (newest upload is at the top!)
-    latest_pdf = pdf_links[0]
-    print(f"\n✅ Selected newest PDF: {latest_pdf}")
-    return latest_pdf
-
-def process_pdf(pdf_bytes):
-    print("🔍 Extracting visual and text data using pdfplumber...")
+def process_pdf(pdf_path):
+    print(f"🔍 Reading local file: {pdf_path}")
     feeders_data = []
     
-    with pdfplumber.open(io.BytesIO(pdf_bytes)) as pdf:
+    with pdfplumber.open(pdf_path) as pdf:
         for page_num, page in enumerate(pdf.pages):
             tables = page.find_tables()
             if not tables:
                 continue
                 
             table = tables[0]
-            cells = table.cells 
-            text_data = table.extract() 
+            text_data = table.extract()
             
-            # UPDATED LOGIC: Catch ANY shaded box, not just pure black
-            black_rects = []
-            for r in page.rects:
-                color = r.get('non_stroking_color')
-                if color and color not in (1, [1,1,1], (1,1,1), [1], (1,), (1.0, 1.0, 1.0)):
-                    if r.get('width', 0) > 2:
-                        black_rects.append(r)
-
             for row_idx, row_text in enumerate(text_data):
-                if not row_text or len(row_text) < 3 or "Division" in str(row_text[0]) or "Saturday" in str(row_text[0]):
+                # Defensively skip invalid or header rows
+                if not row_text or len(row_text) < 4:
+                    continue
+                
+                first_col = str(row_text[0] or "")
+                if "Division" in first_col or "Saturday" in first_col or "Sunday" in first_col:
                     continue
 
                 division = str(row_text[0]).replace("\n", " ").strip() if row_text[0] else ""
                 area = str(row_text[1]).replace("\n", " ").strip() if row_text[1] else ""
                 feeder_name = str(row_text[2]).replace("\n", " ").strip() if row_text[2] else ""
 
-                if not feeder_name or row_idx >= len(cells):
+                if not feeder_name:
                     continue
 
-                row_boxes = cells[row_idx]
-                hour_boxes = row_boxes[-24:] 
+                # The 24 hourly time slots are the last 24 columns in the row
+                hour_values = row_text[-24:] if len(row_text) >= 27 else []
                 intervals = []
 
                 for h_idx in range(24):
                     is_outage = False
                     
-                    if h_idx < len(hour_boxes):
-                        bbox = hour_boxes[h_idx]
-                        if bbox and isinstance(bbox, (list, tuple)) and len(bbox) == 4:
-                            x0, top, x1, bottom = bbox
-                            center_x = (x0 + x1) / 2
-                            center_y = (top + bottom) / 2
-                            
-                            for rect in black_rects:
-                                rx0, rtop, rx1, rbottom = rect['x0'], rect['top'], rect['x1'], rect['bottom']
-                                if rx0 <= center_x <= rx1 and rtop <= center_y <= rbottom:
-                                    is_outage = True
-                                    break
+                    if h_idx < len(hour_values):
+                        val = hour_values[h_idx]
+                        if val is not None:
+                            val_str = str(val).strip()
+                            # An outage slot contains non-empty text (numbers, '0', 'LS', 'X', etc.)
+                            if len(val_str) > 0:
+                                is_outage = True
 
                     intervals.append({
                         "start": f"{h_idx:02d}:00",
@@ -110,23 +67,25 @@ def process_pdf(pdf_bytes):
 
 def main():
     try:
-        pdf_url = get_latest_pdf_url()
-        document_name = pdf_url.split('/')[-1]
-        print("📥 Downloading PDF...")
-        response = requests.get(pdf_url, verify=False)
+        local_pdf = "schedule.pdf"
+        feeders = process_pdf(local_pdf)
         
-        feeders = process_pdf(response.content)
+        total_outages = sum(1 for f in feeders for i in f['intervals'] if i['status'] == "SCHEDULED_OUTAGE")
+        
         print(f"✅ Successfully processed {len(feeders)} feeders.")
+        print(f"⚡ Found a total of {total_outages} scheduled blackout hours across the grid.")
         
         output_path = "../data/desco-database.json"
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump({
-                "metadata": {"document_name": document_name}, 
+                "metadata": {"document_name": "DESCO Schedule 9731b47e-db13-4998-8bb4-3e3045f51f92.pdf"}, 
                 "feeders": feeders
             }, f, indent=2, ensure_ascii=False)
             
         print(f"🚀 Data successfully written to {output_path}")
 
+    except FileNotFoundError:
+        print("❌ Error: Could not find 'schedule.pdf' in the ingestion folder.")
     except Exception as e:
         print(f"❌ Error: {e}")
         traceback.print_exc()
