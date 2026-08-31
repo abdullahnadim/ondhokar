@@ -14,7 +14,6 @@ export default function SearchBox({ onSelect, lang }: SearchBoxProps) {
   const [isOpen, setIsOpen] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
@@ -33,10 +32,10 @@ export default function SearchBox({ onSelect, lang }: SearchBoxProps) {
       const searchTerms = val.toLowerCase().split(' ');
       
       const filtered = descoData.feeders.filter(f => {
-        // Search across BOTH English and Bengali fields simultaneously
-        const searchableText = `${f.area} ${f.division} ${f.feeder} ${f.area_bn || ''} ${f.division_bn || ''} ${f.feeder_bn || ''}`.toLowerCase();
+        const fAny = f as any; 
+        const searchableText = `${f.area} ${f.division} ${f.feeder} ${fAny.area_bn || ''} ${fAny.division_bn || ''} ${fAny.feeder_bn || ''}`.toLowerCase();
         return searchTerms.every(term => searchableText.includes(term));
-      }).slice(0, 8); // Limit to top 8 results for a clean UI
+      }).slice(0, 8);
       
       setResults(filtered);
       setIsOpen(true);
@@ -75,20 +74,23 @@ export default function SearchBox({ onSelect, lang }: SearchBoxProps) {
       
       {isOpen && results.length > 0 && (
         <ul className="absolute z-20 w-full mt-2 bg-ondhokar-surface/80 backdrop-blur-2xl border border-ondhokar-border rounded-xl shadow-xl overflow-hidden max-h-96 overflow-y-auto">
-          {results.map(result => (
-            <li 
-              key={result.id}
-              className="px-4 py-3 cursor-pointer hover:bg-ondhokar-elevated/80 border-b border-ondhokar-border/50 last:border-0 text-left transition-colors"
-              onClick={() => handleSelect(result.id)}
-            >
-              <div className="text-ondhokar-text font-medium text-lg">
-                {lang === 'BN' && result.feeder_bn ? result.feeder_bn : result.feeder}
-              </div>
-              <div className="text-sm text-ondhokar-muted mt-0.5 truncate">
-                {lang === 'BN' && result.division_bn ? result.division_bn : result.division} • {lang === 'BN' && result.area_bn ? result.area_bn : result.area}
-              </div>
-            </li>
-          ))}
+          {results.map(result => {
+            const rAny = result as any; // Cast here to silence TypeScript
+            return (
+              <li 
+                key={result.id}
+                className="px-4 py-3 cursor-pointer hover:bg-ondhokar-elevated/80 border-b border-ondhokar-border/50 last:border-0 text-left transition-colors"
+                onClick={() => handleSelect(result.id)}
+              >
+                <div className="text-ondhokar-text font-medium text-lg">
+                  {lang === 'BN' && rAny.feeder_bn ? rAny.feeder_bn : result.feeder}
+                </div>
+                <div className="text-sm text-ondhokar-muted mt-0.5 truncate">
+                  {lang === 'BN' && rAny.division_bn ? rAny.division_bn : result.division} • {lang === 'BN' && rAny.area_bn ? rAny.area_bn : result.area}
+                </div>
+              </li>
+            );
+          })}
         </ul>
       )}
       

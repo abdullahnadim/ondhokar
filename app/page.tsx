@@ -211,10 +211,11 @@ export default function Home() {
                 <div className="flex justify-between items-start mb-6">
                   <div>
                     <h3 className="text-2xl font-bold text-ondhokar-text">
-                      {lang === 'BN' && selectedFeederData.feeder_bn ? selectedFeederData.feeder_bn : selectedFeederData.feeder}
+                      {/* TYPE-SAFE CAST FOR BENGALI DYNAMIC FIELDS */}
+                      {lang === 'BN' && (selectedFeederData as any).feeder_bn ? (selectedFeederData as any).feeder_bn : selectedFeederData.feeder}
                     </h3>
                     <p className="text-ondhokar-muted font-medium mt-1">
-                      {t.division} {lang === 'BN' && selectedFeederData.division_bn ? selectedFeederData.division_bn : selectedFeederData.division} • {t.area} {(lang === 'BN' && selectedFeederData.area_bn ? selectedFeederData.area_bn : selectedFeederData.area).substring(0, 45)}{selectedFeederData.area.length > 45 ? '...' : ''}
+                      {t.division} {lang === 'BN' && (selectedFeederData as any).division_bn ? (selectedFeederData as any).division_bn : selectedFeederData.division} • {t.area} {(lang === 'BN' && (selectedFeederData as any).area_bn ? (selectedFeederData as any).area_bn : selectedFeederData.area).substring(0, 45)}{selectedFeederData.area.length > 45 ? '...' : ''}
                     </p>
                   </div>
                   
@@ -230,7 +231,6 @@ export default function Home() {
                   </button>
                 </div>
 
-                {/* You can also pass lang down to ScheduleTimeline if you want to translate "Electricity is available" later */}
                 <ScheduleTimeline 
                   intervals={selectedFeederData.intervals as any} 
                   currentTime={new Date()} 
@@ -240,7 +240,8 @@ export default function Home() {
                    <div>
                      <h4 className="font-bold mb-2 text-ondhokar-text">{t.areaCovered}</h4>
                      <p className="text-ondhokar-muted font-medium leading-relaxed">
-                       {lang === 'BN' && selectedFeederData.area_bn ? selectedFeederData.area_bn : selectedFeederData.area}
+                       {/* TYPE-SAFE CAST */}
+                       {lang === 'BN' && (selectedFeederData as any).area_bn ? (selectedFeederData as any).area_bn : selectedFeederData.area}
                      </p>
                    </div>
                    <div>

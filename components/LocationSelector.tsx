@@ -2,32 +2,52 @@
 import { useState, useMemo } from 'react';
 import descoData from '@/data/desco-database.json';
 
-export default function LocationSelector({ onSelect }: { onSelect: (feederId: string) => void }) {
+interface LocationSelectorProps {
+  onSelect: (feederId: string) => void;
+  lang: 'EN' | 'BN';
+}
+
+export default function LocationSelector({ onSelect, lang }: LocationSelectorProps) {
   const [division, setDivision] = useState('');
   const [area, setArea] = useState('');
   const [feeder, setFeeder] = useState('');
 
-  // Extract unique divisions
+  // Extract unique divisions (bilingual support)
   const divisions = useMemo(() => {
-    const divs = new Set(descoData.feeders.map(f => f.division));
-    return Array.from(divs).sort();
-  }, []);
+    const divs = new Map();
+    descoData.feeders.forEach(f => {
+      const fAny = f as any;
+      divs.set(f.division, lang === 'BN' && fAny.division_bn ? fAny.division_bn : f.division);
+    });
+    return Array.from(divs.entries()).sort((a, b) => a[1].localeCompare(b[1]));
+  }, [lang]);
 
   // Extract areas based on selected division
   const areas = useMemo(() => {
     if (!division) return [];
     const filtered = descoData.feeders.filter(f => f.division === division);
-    const uniqueAreas = new Set(filtered.map(f => f.area));
-    return Array.from(uniqueAreas).sort();
-  }, [division]);
+    const uniqueAreas = new Map();
+    filtered.forEach(f => {
+      const fAny = f as any;
+      uniqueAreas.set(f.area, lang === 'BN' && fAny.area_bn ? fAny.area_bn : f.area);
+    });
+    return Array.from(uniqueAreas.entries()).sort((a, b) => a[1].localeCompare(b[1]));
+  }, [division, lang]);
 
   // Extract feeders based on selected area
   const feeders = useMemo(() => {
     if (!area) return [];
     return descoData.feeders
       .filter(f => f.area === area && f.division === division)
-      .sort((a, b) => a.feeder.localeCompare(b.feeder));
-  }, [area, division]);
+      .map(f => {
+        const fAny = f as any;
+        return {
+          id: f.id,
+          display: lang === 'BN' && fAny.feeder_bn ? fAny.feeder_bn : f.feeder
+        };
+      })
+      .sort((a, b) => a.display.localeCompare(b.display));
+  }, [area, division, lang]);
 
   const handleFeederSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const val = e.target.value;
@@ -43,7 +63,7 @@ export default function LocationSelector({ onSelect }: { onSelect: (feederId: st
       {/* Division Dropdown */}
       <div className="relative">
         <select 
-          className="w-full appearance-none bg-ondhokar-surface/60 backdrop-blur-xl text-ondhokar-text border border-ondhokar-border rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-ondhokar-muted/50 transition-all cursor-pointer shadow-sm"
+          className="w-full appearance-none bg-ondhokar-surface/60 backdrop-blur-xl text-ondhokar-text border border-ondhokar-border rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-ondhokar-accent/40 transition-all cursor-pointer shadow-glass"
           value={division}
           onChange={(e) => {
             setDivision(e.target.value);
@@ -51,9 +71,11 @@ export default function LocationSelector({ onSelect }: { onSelect: (feederId: st
             setFeeder('');
           }}
         >
-          <option value="" disabled className="bg-ondhokar-bg text-ondhokar-muted">Select Division</option>
-          {divisions.map(d => (
-            <option key={d} value={d} className="bg-ondhokar-bg text-ondhokar-text">{d}</option>
+          <option value="" disabled className="bg-ondhokar-bg text-ondhokar-muted">
+            {lang === 'BN' ? 'বিভাগ নির্বাচন করুন' : 'Select Division'}
+          </option>
+          {divisions.map(([val, display]) => (
+            <option key={val} value={val} className="bg-ondhokar-bg text-ondhokar-text">{display}</option>
           ))}
         </select>
         <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-ondhokar-muted">
@@ -64,7 +86,7 @@ export default function LocationSelector({ onSelect }: { onSelect: (feederId: st
       {/* Area Dropdown */}
       <div className="relative">
         <select 
-          className={`w-full appearance-none bg-ondhokar-surface/60 backdrop-blur-xl text-ondhokar-text border border-ondhokar-border rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-ondhokar-muted/50 transition-all cursor-pointer shadow-sm ${!division ? 'opacity-50 cursor-not-allowed' : ''}`}
+          className={`w-full appearance-none bg-ondhokar-surface/60 backdrop-blur-xl text-ondhokar-text border border-ondhokar-border rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-ondhokar-accent/40 transition-all cursor-pointer shadow-glass ${!division ? 'opacity-50 cursor-not-allowed' : ''}`}
           value={area}
           onChange={(e) => {
             setArea(e.target.value);
@@ -72,9 +94,13 @@ export default function LocationSelector({ onSelect }: { onSelect: (feederId: st
           }}
           disabled={!division}
         >
-          <option value="" disabled className="bg-ondhokar-bg text-ondhokar-muted">Select Area</option>
-          {areas.map(a => (
-            <option key={a} value={a} className="bg-ondhokar-bg text-ondhokar-text">{a.substring(0, 40)}{a.length > 40 ? '...' : ''}</option>
+          <option value="" disabled className="bg-ondhokar-bg text-ondhokar-muted">
+            {lang === 'BN' ? 'এলাকা নির্বাচন করুন' : 'Select Area'}
+          </option>
+          {areas.map(([val, display]) => (
+            <option key={val} value={val} className="bg-ondhokar-bg text-ondhokar-text">
+              {display.substring(0, 40)}{display.length > 40 ? '...' : ''}
+            </option>
           ))}
         </select>
         <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-ondhokar-muted">
@@ -85,14 +111,16 @@ export default function LocationSelector({ onSelect }: { onSelect: (feederId: st
       {/* Feeder Dropdown */}
       <div className="relative">
         <select 
-          className={`w-full appearance-none bg-ondhokar-surface/60 backdrop-blur-xl text-ondhokar-text border border-ondhokar-border rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-ondhokar-muted/50 transition-all cursor-pointer shadow-sm ${!area ? 'opacity-50 cursor-not-allowed' : ''}`}
+          className={`w-full appearance-none bg-ondhokar-surface/60 backdrop-blur-xl text-ondhokar-text border border-ondhokar-border rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-ondhokar-accent/40 transition-all cursor-pointer shadow-glass ${!area ? 'opacity-50 cursor-not-allowed' : ''}`}
           value={feeder}
           onChange={handleFeederSelect}
           disabled={!area}
         >
-          <option value="" disabled className="bg-ondhokar-bg text-ondhokar-muted">Select Feeder</option>
+          <option value="" disabled className="bg-ondhokar-bg text-ondhokar-muted">
+            {lang === 'BN' ? 'ফিডার নির্বাচন করুন' : 'Select Feeder'}
+          </option>
           {feeders.map(f => (
-            <option key={f.id} value={f.id} className="bg-ondhokar-bg text-ondhokar-text">{f.feeder}</option>
+            <option key={f.id} value={f.id} className="bg-ondhokar-bg text-ondhokar-text">{f.display}</option>
           ))}
         </select>
         <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-ondhokar-muted">
