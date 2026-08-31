@@ -19,7 +19,7 @@ jobs:
 
       - name: Install dependencies and Playwright
         run: |
-          pip install requests beautifulsoup4 pdfplumber playwright
+          pip install requests beautifulsoup4 pdfplumber playwright deep-translator
           playwright install chromium
 
       - name: Run Extraction Engine

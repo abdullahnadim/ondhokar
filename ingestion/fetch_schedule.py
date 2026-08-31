@@ -5,6 +5,7 @@ import io
 import requests
 import urllib3
 from playwright.sync_api import sync_playwright
+from deep_translator import GoogleTranslator
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 DESCO_URL = "https://desco.gov.bd/pages/static-pages/69db2a3c6a42b12e9344d1f1"
@@ -68,8 +69,12 @@ def process_pdf(pdf_bytes):
 
                 safe_feeder_id = f"fdr_{feeder_name.lower().replace(' ', '_').replace('-', '').replace('/', '')}"
                 feeders_data.append({
-                    "id": safe_feeder_id, "division": division, "area": area,
-                    "feeder": feeder_name, "page": page_num + 1, "intervals": intervals
+                    "id": safe_feeder_id, 
+                    "division": division, 
+                    "area": area,
+                    "feeder": feeder_name, 
+                    "page": page_num + 1, 
+                    "intervals": intervals
                 })
     return feeders_data
 
@@ -81,12 +86,52 @@ def main():
         print(f"📥 Downloading {document_name}...")
         response = requests.get(pdf_url, verify=False)
         feeders = process_pdf(response.content)
-        total_outages = sum(1 for f in feeders for i in f['intervals'] if i['status'] == "SCHEDULED_OUTAGE")
         
+        # --- BENGALI TRANSLATION ENGINE ---
+        print("🌍 Translating database to Bengali in bulk...")
+        unique_texts = set()
+        for f in feeders:
+            if f['division']: unique_texts.add(f['division'])
+            if f['area']: unique_texts.add(f['area'])
+            if f['feeder']: unique_texts.add(f['feeder'])
+            
+        unique_texts = list(unique_texts)
+        translation_cache = {}
+        translator = GoogleTranslator(source='en', target='bn')
+        
+        # Translate in batches of 50 to prevent API timeouts
+        chunk_size = 50
+        for i in range(0, len(unique_texts), chunk_size):
+            chunk = unique_texts[i:i+chunk_size]
+            try:
+                translated_chunk = translator.translate_batch(chunk)
+                for orig, trans in zip(chunk, translated_chunk):
+                    translation_cache[orig] = trans if trans else orig
+            except Exception as e:
+                print(f"⚠️ Translation warning for a chunk: {e}")
+                # Fallback to English if translation fails for this chunk
+                for orig in chunk:
+                    translation_cache[orig] = orig
+
+        # Map the translations back to the JSON object
+        for f in feeders:
+            f['division_bn'] = translation_cache.get(f['division'], f['division'])
+            f['area_bn'] = translation_cache.get(f['area'], f['area'])
+            f['feeder_bn'] = translation_cache.get(f['feeder'], f['feeder'])
+        # ----------------------------------
+
+        total_outages = sum(1 for f in feeders for i in f['intervals'] if i['status'] == "SCHEDULED_OUTAGE")
         print(f"✅ Processed {len(feeders)} feeders. Found {total_outages} blackout hours.")
         
-        with open("../data/desco-database.json", "w", encoding="utf-8") as f:
-            json.dump({"metadata": {"document_name": document_name}, "feeders": feeders}, f, indent=2, ensure_ascii=False)
+        output_path = "../data/desco-database.json"
+        with open(output_path, "w", encoding="utf-8") as f:
+            json.dump({
+                "metadata": {"document_name": document_name}, 
+                "feeders": feeders
+            }, f, indent=2, ensure_ascii=False)
+            
+        print(f"🚀 Data successfully written to {output_path}")
+
     except Exception as e:
         print(f"❌ Error: {e}")
         traceback.print_exc()

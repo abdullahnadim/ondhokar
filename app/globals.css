@@ -1,18 +1,52 @@
 @import "tailwindcss";
 
-/* This line tells Tailwind v4 to use the button class for Dark Mode */
 @custom-variant dark (&:where(.dark, .dark *));
 
+:root {
+  /* Premium Apple/Editorial Light Mode */
+  --bg-color: #F8F9FA;
+  --surface-color: rgba(255, 255, 255, 0.85);
+  --surface-elevated: #FFFFFF;
+  --text-main: #0F172A; /* Deep slate obsidian */
+  --text-muted: #64748B; /* Elegant slate-500 */
+  --border-color: rgba(15, 23, 42, 0.08); /* Crisp hairline border */
+  --accent-color: #D97706; /* Refined warm amber */
+  --success-bg: rgba(16, 185, 129, 0.08);
+  --success-text: #047857;
+  
+  /* Specular light shadow */
+  --glass-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 8px 24px -4px rgba(15, 23, 42, 0.06);
+}
+
+.dark {
+  /* Ultra-Deep OLED Dark Mode */
+  --bg-color: #000000;
+  --surface-color: rgba(18, 18, 20, 0.75);
+  --surface-elevated: #18181B;
+  --text-main: #EDEDED;
+  --text-muted: #94A3B8;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --accent-color: #FBBF24;
+  --success-bg: rgba(16, 185, 129, 0.12);
+  --success-text: #34D399;
+
+  /* Deep glow shadow */
+  --glass-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5), 0 8px 24px -4px rgba(0, 0, 0, 0.4);
+}
+
 @theme {
-  --color-ondhokar-bg: #F9F9F8;
-  --color-ondhokar-text: #171717;
-  --color-ondhokar-muted: #737373;
-  --color-ondhokar-border: #E5E5E5;
-  --color-ondhokar-outage: #18181B;
-  --color-ondhokar-available: #E4E4E7;
-  --color-ondhokar-accent: #D97706;
+  --color-ondhokar-bg: var(--bg-color);
+  --color-ondhokar-surface: var(--surface-color);
+  --color-ondhokar-elevated: var(--surface-elevated);
+  --color-ondhokar-text: var(--text-main);
+  --color-ondhokar-muted: var(--text-muted);
+  --color-ondhokar-border: var(--border-color);
+  --color-ondhokar-accent: var(--accent-color);
+  --color-ondhokar-success-bg: var(--success-bg);
+  --color-ondhokar-success-text: var(--success-text);
 
-  --shadow-utility: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-
-  --font-sans: var(--font-inter), var(--font-noto-bengali), sans-serif;
+  --shadow-glass: var(--glass-shadow);
+  
+  /* The browser will use Inter for English, and seamlessly switch to Noto for Bengali */
+  --font-sans: var(--font-inter), var(--font-noto-bengali), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }

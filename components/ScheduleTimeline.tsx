@@ -15,7 +15,6 @@ interface ScheduleTimelineProps {
   currentTime: Date;
 }
 
-// Helper to convert "14:00" to "2:00 PM"
 const format12Hour = (hour24: number) => {
   if (hour24 === 0 || hour24 === 24) return '12:00 AM';
   if (hour24 === 12) return '12:00 PM';
@@ -32,14 +31,11 @@ export default function ScheduleTimeline({ intervals, currentTime }: ScheduleTim
   
   const currentHour = currentTime.getHours();
 
-  // Find active and upcoming outages
   const activeInterval = intervals.find(i => parseInt(i.start.split(':')[0]) === currentHour);
   const isOutageNow = activeInterval?.status === 'SCHEDULED_OUTAGE';
   
   const outageIntervals = intervals.filter(i => i.status === 'SCHEDULED_OUTAGE');
   const totalOutages = outageIntervals.length;
-  
-  // Calculate the Next Outage
   const nextOutage = outageIntervals.find(i => parseInt(i.start.split(':')[0]) > currentHour);
 
   return (
@@ -51,49 +47,57 @@ export default function ScheduleTimeline({ intervals, currentTime }: ScheduleTim
         <p className="text-ondhokar-muted mt-1">{dateString} • Current published schedule</p>
       </div>
 
-      {/* 2. THE 5-SECOND GLANCE CARD */}
+      {/* 2. PREMIUM GLANCE CARDS */}
       <div className="mb-10">
         {isOutageNow ? (
-          // OUTAGE ACTIVE STATE
-          <div className="bg-red-50 border-2 border-red-200 rounded-xl p-6 flex items-start gap-4 shadow-sm">
-            <ZapOff className="w-8 h-8 text-red-600 shrink-0 mt-1 animate-pulse" />
+          <div className="bg-ondhokar-elevated/70 backdrop-blur-md border border-ondhokar-border rounded-2xl p-6 flex items-start gap-5 shadow-glass relative overflow-hidden transition-all duration-300">
+            <div className="absolute top-0 left-0 w-1.5 h-full bg-red-500 shadow-[0_0_12px_rgba(239,68,68,0.6)]"></div>
+            <div className="p-2.5 bg-red-500/10 rounded-full shrink-0">
+              <ZapOff className="w-6 h-6 text-red-500 animate-pulse" />
+            </div>
             <div>
-              <h3 className="text-2xl font-bold text-red-900 tracking-tight">Load shedding happening now.</h3>
-              <p className="text-red-700 font-medium text-lg mt-1">
-                Electricity expected back at {format12Hour(parseInt(activeInterval.end))}
+              <h3 className="text-xl font-bold text-ondhokar-text tracking-tight">Load shedding happening now.</h3>
+              <p className="text-ondhokar-muted font-medium mt-1">
+                Electricity expected back at <span className="font-bold text-ondhokar-text">{format12Hour(parseInt(activeInterval.end))}</span>
               </p>
             </div>
           </div>
         ) : !isOutageNow && nextOutage ? (
-          // OUTAGE COMING STATE
-          <div className="bg-amber-50 border-2 border-amber-200 rounded-xl p-6 flex items-start gap-4 shadow-sm">
-            <AlertTriangle className="w-8 h-8 text-amber-600 shrink-0 mt-1" />
+          <div className="bg-ondhokar-elevated/70 backdrop-blur-md border border-ondhokar-border rounded-2xl p-6 flex items-start gap-5 shadow-glass relative overflow-hidden transition-all duration-300">
+            <div className="absolute top-0 left-0 w-1.5 h-full bg-amber-500 shadow-[0_0_12px_rgba(245,158,11,0.5)]"></div>
+            <div className="p-2.5 bg-amber-500/10 rounded-full shrink-0">
+              <AlertTriangle className="w-6 h-6 text-amber-500" />
+            </div>
             <div>
-              <h3 className="text-2xl font-bold text-amber-900 tracking-tight">Electricity is available.</h3>
-              <p className="text-amber-700 font-medium text-lg mt-1">
-                Next scheduled outage starts at <span className="font-bold">{format12Hour(parseInt(nextOutage.start))}</span> 
-                <span className="text-amber-600/80 text-base ml-2">
+              <h3 className="text-xl font-bold text-ondhokar-text tracking-tight">Electricity is available.</h3>
+              <p className="text-ondhokar-muted font-medium mt-1">
+                Next scheduled outage starts at <span className="text-ondhokar-text font-bold">{format12Hour(parseInt(nextOutage.start))}</span> 
+                <span className="text-amber-500/90 font-semibold ml-2">
                   (in {parseInt(nextOutage.start) - currentHour} {parseInt(nextOutage.start) - currentHour === 1 ? 'hour' : 'hours'})
                 </span>
               </p>
             </div>
           </div>
         ) : totalOutages > 0 ? (
-          // OUTAGES EXISTED, BUT ALL CLEAR FOR REST OF DAY
-          <div className="bg-green-50 border-2 border-green-200 rounded-xl p-6 flex items-start gap-4 shadow-sm">
-            <Zap className="w-8 h-8 text-green-600 shrink-0 mt-1" />
+          <div className="bg-ondhokar-elevated/70 backdrop-blur-md border border-ondhokar-border rounded-2xl p-6 flex items-start gap-5 shadow-glass relative overflow-hidden transition-all duration-300">
+            <div className="absolute top-0 left-0 w-1.5 h-full bg-emerald-500/80 shadow-[0_0_12px_rgba(16,185,129,0.4)]"></div>
+            <div className="p-2.5 bg-emerald-500/10 rounded-full shrink-0">
+              <Zap className="w-6 h-6 text-emerald-500" />
+            </div>
             <div>
-              <h3 className="text-2xl font-bold text-green-900 tracking-tight">Electricity is available.</h3>
-              <p className="text-green-700 font-medium text-lg mt-1">All scheduled load shedding for today has passed.</p>
+              <h3 className="text-xl font-bold text-ondhokar-text tracking-tight">Electricity is available.</h3>
+              <p className="text-ondhokar-muted font-medium mt-1">All scheduled load shedding for today has passed.</p>
             </div>
           </div>
         ) : (
-          // NO OUTAGES SCHEDULED ALL DAY
-          <div className="bg-green-50 border-2 border-green-200 rounded-xl p-6 flex items-start gap-4 shadow-sm">
-            <CheckCircle2 className="w-8 h-8 text-green-600 shrink-0 mt-1" />
+          <div className="bg-ondhokar-elevated/70 backdrop-blur-md border border-ondhokar-border rounded-2xl p-6 flex items-start gap-5 shadow-glass relative overflow-hidden transition-all duration-300">
+            <div className="absolute top-0 left-0 w-1.5 h-full bg-emerald-500/80 shadow-[0_0_12px_rgba(16,185,129,0.4)]"></div>
+            <div className="p-2.5 bg-emerald-500/10 rounded-full shrink-0">
+              <CheckCircle2 className="w-6 h-6 text-emerald-500" />
+            </div>
             <div>
-              <h3 className="text-2xl font-bold text-green-900 tracking-tight">No load shedding today.</h3>
-              <p className="text-green-700 font-medium text-lg mt-1">According to the published DESCO schedule, electricity should be available all day.</p>
+              <h3 className="text-xl font-bold text-ondhokar-text tracking-tight">No load shedding today.</h3>
+              <p className="text-ondhokar-muted font-medium mt-1">According to the published DESCO schedule, electricity should be available all day.</p>
             </div>
           </div>
         )}
@@ -109,7 +113,7 @@ export default function ScheduleTimeline({ intervals, currentTime }: ScheduleTim
           <span>12 AM</span>
         </div>
         
-        <div className="relative w-full h-14 bg-gray-100 rounded-md overflow-hidden border border-gray-200 shadow-inner">
+        <div className="relative w-full h-12 bg-ondhokar-elevated/50 backdrop-blur-sm rounded-xl overflow-hidden border border-ondhokar-border shadow-inner">
           {intervals.map((interval, idx) => {
             const hour = parseInt(interval.start.split(':')[0]);
             const isOutage = interval.status === 'SCHEDULED_OUTAGE';
@@ -119,15 +123,15 @@ export default function ScheduleTimeline({ intervals, currentTime }: ScheduleTim
             return (
               <div 
                 key={idx}
-                className={`absolute top-0 bottom-0 border-r border-white/20 transition-all
-                  ${isOutage ? 'bg-zinc-900' : 'bg-transparent'}
-                  ${isPast && isOutage ? 'opacity-40' : ''}
+                className={`absolute top-0 bottom-0 border-r border-ondhokar-border/40 transition-all
+                  ${isOutage ? 'bg-ondhokar-text/85' : 'bg-transparent'}
+                  ${isPast && isOutage ? 'opacity-30' : ''}
                 `}
                 style={{ left: `${(idx / 24) * 100}%`, width: `${(1 / 24) * 100}%` }}
               >
                 {isCurrent && (
-                  <div className="absolute -top-1 bottom-0 left-0 right-0 border-x-2 border-ondhokar-accent bg-ondhokar-accent/20 z-10 flex items-start justify-center">
-                    <span className="bg-ondhokar-accent text-white text-[10px] font-bold px-1.5 py-0.5 rounded-b-sm shadow-sm tracking-widest">
+                  <div className="absolute -top-1 bottom-0 left-0 right-0 border-x-2 border-ondhokar-accent bg-ondhokar-accent/15 z-10 flex items-start justify-center">
+                    <span className="bg-ondhokar-accent text-ondhokar-bg text-[10px] font-bold px-1.5 py-0.5 rounded-b-sm shadow-sm tracking-widest">
                       NOW
                     </span>
                   </div>
@@ -146,22 +150,26 @@ export default function ScheduleTimeline({ intervals, currentTime }: ScheduleTim
            const isCurrent = hour === currentHour || hour + 1 === currentHour;
 
            return (
-             <div key={idx} className={`flex items-center justify-between p-3 rounded-lg border ${isCurrent ? 'border-ondhokar-accent ring-1 ring-ondhokar-accent bg-orange-50/30' : 'border-ondhokar-border'} ${isOutage ? 'bg-zinc-50' : 'bg-white'}`}>
+             <div key={idx} className={`flex items-center justify-between p-4 rounded-xl border backdrop-blur-md transition-colors ${
+               isCurrent 
+                 ? 'border-ondhokar-accent ring-1 ring-ondhokar-accent bg-ondhokar-accent/5' 
+                 : 'border-ondhokar-border bg-ondhokar-surface/60'
+             }`}>
                 <div className="flex items-center space-x-4">
                   <span className="text-sm font-semibold text-ondhokar-muted w-16">{format12Hour(hour)}</span>
-                  <span className={`text-sm ${isOutage ? 'font-bold text-zinc-900' : 'font-medium text-ondhokar-muted'}`}>
+                  <span className={`text-sm ${isOutage ? 'font-bold text-ondhokar-text' : 'font-medium text-ondhokar-muted'}`}>
                     {isOutage ? 'Outage in this window' : 'Available'}
                   </span>
                 </div>
-                {isCurrent && <span className="text-xs font-bold text-white bg-ondhokar-accent px-2 py-1 rounded tracking-widest">NOW</span>}
+                {isCurrent && <span className="text-[10px] font-bold text-ondhokar-bg bg-ondhokar-accent px-2 py-1 rounded tracking-widest shadow-sm">NOW</span>}
              </div>
            );
          })}
       </div>
 
-      {/* 5. SCHEDULED OUTAGES LIST (Only renders if outages exist) */}
+      {/* 5. SCHEDULED OUTAGES LIST */}
       {totalOutages > 0 && (
-        <div className="bg-white border border-ondhokar-border rounded-xl p-6">
+        <div className="bg-ondhokar-surface/60 backdrop-blur-xl border border-ondhokar-border rounded-2xl p-6 mt-6 shadow-glass">
           <h4 className="font-semibold text-ondhokar-text mb-4 flex items-center gap-2">
             <Clock className="w-5 h-5 text-ondhokar-muted" />
             All Scheduled Outages Today
@@ -170,7 +178,11 @@ export default function ScheduleTimeline({ intervals, currentTime }: ScheduleTim
             {outageIntervals.map((interval, idx) => {
               const isPast = parseInt(interval.end) <= currentHour;
               return (
-                <div key={idx} className={`flex items-center gap-2 font-medium px-4 py-2 border rounded-lg ${isPast ? 'bg-gray-50 border-gray-200 text-gray-400' : 'bg-zinc-900 border-zinc-900 text-white shadow-sm'}`}>
+                <div key={idx} className={`flex items-center gap-2 text-sm font-medium px-4 py-2 border rounded-xl transition-all ${
+                  isPast 
+                    ? 'bg-ondhokar-elevated/50 border-ondhokar-border text-ondhokar-muted backdrop-blur-sm' 
+                    : 'bg-ondhokar-text border-ondhokar-text text-ondhokar-bg shadow-sm'
+                }`}>
                   {format12Hour(parseInt(interval.start))} — {format12Hour(parseInt(interval.end))}
                 </div>
               );

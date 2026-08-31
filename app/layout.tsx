@@ -1,12 +1,25 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Noto_Sans_Bengali } from 'next/font/google';
 import { ThemeProvider } from './providers';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+// 1. Premium English Typography
+const inter = Inter({ 
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+// 2. Premium Bengali Typography
+const notoBengali = Noto_Sans_Bengali({
+  subsets: ['bengali'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-noto-bengali',
+  display: 'swap',
+});
 
 export const viewport: Viewport = {
-  themeColor: '#18181b', // This makes the mobile status bar match your dark theme
+  themeColor: '#18181b', 
   width: 'device-width',
   initialScale: 1,
   maximumScale: 1,
@@ -18,7 +31,7 @@ export const metadata: Metadata = {
   description: 'Check your scheduled DESCO load-shedding hours instantly. A fast, minimal tracker for Dhaka electricity schedules.',
   keywords: ['DESCO', 'Load Shedding', 'Dhaka', 'Electricity Schedule', 'Ondhokar', 'Power Outage', 'Bangladesh'],
   authors: [{ name: 'Abdullah Nadim' }],
-  manifest: '/manifest.json', // Links the PWA manifest
+  manifest: '/manifest.json', 
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
@@ -27,7 +40,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Ondhokar | DESCO Schedule',
     description: 'Check your scheduled DESCO load-shedding hours instantly in Dhaka.',
-    url: 'https://ondhokar.vercel.app', // Update this to your custom domain later if needed
+    url: 'https://ondhokar.vercel.app', 
     siteName: 'Ondhokar',
     images: [
       {
@@ -54,8 +67,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`antialiased ${inter.className}`}>
+    // Apply both font variables to the HTML tag
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${notoBengali.variable}`}>
+      <body className="antialiased font-sans">
         <ThemeProvider>
           {children}
         </ThemeProvider>

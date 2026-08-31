@@ -3,7 +3,12 @@ import { useState, useEffect, useRef } from 'react';
 import { Search } from 'lucide-react';
 import descoData from '@/data/desco-database.json';
 
-export default function SearchBox({ onSelect }: { onSelect: (feederId: string) => void }) {
+interface SearchBoxProps {
+  onSelect: (feederId: string) => void;
+  lang: 'EN' | 'BN';
+}
+
+export default function SearchBox({ onSelect, lang }: SearchBoxProps) {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<typeof descoData.feeders>([]);
   const [isOpen, setIsOpen] = useState(false);
@@ -28,8 +33,8 @@ export default function SearchBox({ onSelect }: { onSelect: (feederId: string) =
       const searchTerms = val.toLowerCase().split(' ');
       
       const filtered = descoData.feeders.filter(f => {
-        const searchableText = `${f.area} ${f.division} ${f.feeder}`.toLowerCase();
-        // Check if ALL search terms exist in the searchable text
+        // Search across BOTH English and Bengali fields simultaneously
+        const searchableText = `${f.area} ${f.division} ${f.feeder} ${f.area_bn || ''} ${f.division_bn || ''} ${f.feeder_bn || ''}`.toLowerCase();
         return searchTerms.every(term => searchableText.includes(term));
       }).slice(0, 8); // Limit to top 8 results for a clean UI
       
@@ -47,6 +52,14 @@ export default function SearchBox({ onSelect }: { onSelect: (feederId: string) =
     onSelect(feederId);
   };
 
+  const placeholderText = lang === 'BN' 
+    ? "আপনার এলাকা, রাস্তা, সেক্টর বা ফিডার খুঁজুন..." 
+    : "Search your area, road, sector or feeder...";
+
+  const noMatchText = lang === 'BN'
+    ? "কোনো এলাকা পাওয়া যায়নি। অন্য কোনো সেক্টর বা রাস্তা দিয়ে চেষ্টা করুন।"
+    : "No matching area found. Try searching for a sector, road, neighborhood or feeder.";
+
   return (
     <div ref={wrapperRef} className="relative w-full max-w-2xl mx-auto mt-8">
       <div className="relative flex items-center">
@@ -55,22 +68,24 @@ export default function SearchBox({ onSelect }: { onSelect: (feederId: string) =
           type="text"
           value={query}
           onChange={handleSearch}
-          placeholder="Search your area, road, sector or feeder..."
-          className="w-full pl-12 pr-4 py-4 text-lg bg-white border border-ondhokar-border rounded-lg shadow-utility focus:outline-none focus:ring-2 focus:ring-ondhokar-text transition-all"
+          placeholder={placeholderText}
+          className="w-full pl-12 pr-4 py-4 text-base md:text-lg bg-ondhokar-surface/60 backdrop-blur-xl text-ondhokar-text placeholder:text-ondhokar-muted border border-ondhokar-border rounded-xl shadow-glass focus:outline-none focus:ring-2 focus:ring-ondhokar-accent/40 transition-all"
         />
       </div>
       
       {isOpen && results.length > 0 && (
-        <ul className="absolute z-10 w-full mt-2 bg-white border border-ondhokar-border rounded-lg shadow-lg overflow-hidden max-h-96 overflow-y-auto">
+        <ul className="absolute z-20 w-full mt-2 bg-ondhokar-surface/80 backdrop-blur-2xl border border-ondhokar-border rounded-xl shadow-xl overflow-hidden max-h-96 overflow-y-auto">
           {results.map(result => (
             <li 
               key={result.id}
-              className="px-4 py-3 cursor-pointer hover:bg-ondhokar-bg border-b border-ondhokar-border last:border-0 text-left"
+              className="px-4 py-3 cursor-pointer hover:bg-ondhokar-elevated/80 border-b border-ondhokar-border/50 last:border-0 text-left transition-colors"
               onClick={() => handleSelect(result.id)}
             >
-              <div className="text-ondhokar-text font-medium text-lg">{result.feeder}</div>
+              <div className="text-ondhokar-text font-medium text-lg">
+                {lang === 'BN' && result.feeder_bn ? result.feeder_bn : result.feeder}
+              </div>
               <div className="text-sm text-ondhokar-muted mt-0.5 truncate">
-                {result.division} • {result.area}
+                {lang === 'BN' && result.division_bn ? result.division_bn : result.division} • {lang === 'BN' && result.area_bn ? result.area_bn : result.area}
               </div>
             </li>
           ))}
@@ -78,8 +93,8 @@ export default function SearchBox({ onSelect }: { onSelect: (feederId: string) =
       )}
       
       {isOpen && query.length > 2 && results.length === 0 && (
-        <div className="absolute z-10 w-full mt-2 bg-white border border-ondhokar-border rounded-lg shadow-lg p-4 text-ondhokar-muted text-sm text-left">
-          No matching area found. Try searching for a sector, road, neighborhood or feeder.
+        <div className="absolute z-20 w-full mt-2 bg-ondhokar-surface/80 backdrop-blur-2xl border border-ondhokar-border rounded-xl shadow-xl p-4 text-ondhokar-muted text-sm text-left">
+          {noMatchText}
         </div>
       )}
     </div>
