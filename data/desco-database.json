@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "document_name": "fa983499-28d2-44f4-88a1-ba1a0e37fdb2.pdf"
+    "document_name": "f6d29da8-a2f4-496f-bb6e-71532b6f8a56.pdf"
   },
   "feeders": [
     {
@@ -12016,143 +12016,11 @@
       "feeder_bn": "Molla Market RMU"
     },
     {
-      "id": "fdr_cantt._staff",
-      "division": "Eastern Housing",
-      "area": "Mirpur Cantonment , Desa Stuff quater",
-      "feeder": "Cantt. Staff",
-      "page": 4,
-      "intervals": [
-        {
-          "start": "00:00",
-          "end": "01:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "01:00",
-          "end": "02:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "02:00",
-          "end": "03:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "03:00",
-          "end": "04:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "04:00",
-          "end": "05:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "05:00",
-          "end": "06:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "06:00",
-          "end": "07:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "07:00",
-          "end": "08:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "08:00",
-          "end": "09:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "09:00",
-          "end": "10:00",
-          "status": "SCHEDULED_OUTAGE"
-        },
-        {
-          "start": "10:00",
-          "end": "11:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "11:00",
-          "end": "12:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "12:00",
-          "end": "13:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "13:00",
-          "end": "14:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "14:00",
-          "end": "15:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "15:00",
-          "end": "16:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "16:00",
-          "end": "17:00",
-          "status": "SCHEDULED_OUTAGE"
-        },
-        {
-          "start": "17:00",
-          "end": "18:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "18:00",
-          "end": "19:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "19:00",
-          "end": "20:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "20:00",
-          "end": "21:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "21:00",
-          "end": "22:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "22:00",
-          "end": "23:00",
-          "status": "SCHEDULED_OUTAGE"
-        },
-        {
-          "start": "23:00",
-          "end": "24:00",
-          "status": "AVAILABLE"
-        }
-      ],
-      "division_bn": "Eastern Housing",
-      "area_bn": "Mirpur Cantonment , Desa Stuff quater",
-      "feeder_bn": "Cantt. Staff"
-    },
-    {
       "id": "fdr_pallabi_north",
       "division": "Eastern Housing",
       "area": "Karitas Road, East side of Pallabi switching to Sattar Mollah Road",
       "feeder": "Pallabi North",
-      "page": 5,
+      "page": 4,
       "intervals": [
         {
           "start": "00:00",
@@ -13654,7 +13522,7 @@
         {
           "start": "09:00",
           "end": "10:00",
-          "status": "SCHEDULED_OUTAGE"
+          "status": "AVAILABLE"
         },
         {
           "start": "10:00",
@@ -13709,7 +13577,7 @@
         {
           "start": "20:00",
           "end": "21:00",
-          "status": "SCHEDULED_OUTAGE"
+          "status": "AVAILABLE"
         },
         {
           "start": "21:00",
@@ -15188,7 +15056,7 @@
       "division": "Gulshan",
       "area": "Banani: Ahmed Tower",
       "feeder": "Ahmed tower Rmu",
-      "page": 6,
+      "page": 5,
       "intervals": [
         {
           "start": "00:00",
@@ -18224,7 +18092,7 @@
       "division": "Gulshan",
       "area": "Gulshan-01: Rd#15, 16, 16/A, 16/B, 23/A, 23/B, 23 (West Side).",
       "feeder": "Road-16",
-      "page": 7,
+      "page": 6,
       "intervals": [
         {
           "start": "00:00",
@@ -21260,7 +21128,7 @@
       "division": "Gulshan",
       "area": "ICDDRB, Epidemiology & Wireless Area",
       "feeder": "Mohakhali W/L",
-      "page": 8,
+      "page": 7,
       "intervals": [
         {
           "start": "00:00",
@@ -21918,7 +21786,7 @@
     {
       "id": "fdr_banani_park",
       "division": "Gulshan",
-      "area": "Banani: Road-08,Block-C,Block-D Road-11,Block- C,Block-D (South Side)Road-13,Block-C,Block-D",
+      "area": "Banani: Road-08,Block-C,Block-D Road-11,Block-C,Block- D (South Side)Road-13,Block-C,Block-D",
       "feeder": "Banani Park",
       "page": 8,
       "intervals": [
@@ -22044,7 +21912,7 @@
         }
       ],
       "division_bn": "Gulshan",
-      "area_bn": "Banani: Road-08,Block-C,Block-D Road-11,Block- C,Block-D (South Side)Road-13,Block-C,Block-D",
+      "area_bn": "Banani: Road-08,Block-C,Block-D Road-11,Block-C,Block- D (South Side)Road-13,Block-C,Block-D",
       "feeder_bn": "Banani Park"
     },
     {
@@ -24296,7 +24164,7 @@
       "division": "Gulshan",
       "area": "Road-74 Gulshan-2 R/A",
       "feeder": "Road-74",
-      "page": 9,
+      "page": 8,
       "intervals": [
         {
           "start": "00:00",
@@ -27332,7 +27200,7 @@
       "division": "Ibrahimpur",
       "area": "Rokeya Sharani, Kazipara Bridge",
       "feeder": "Section-10",
-      "page": 10,
+      "page": 9,
       "intervals": [
         {
           "start": "00:00",
@@ -30368,7 +30236,7 @@
       "division": "Joarshahara",
       "area": "Road 18,20,22,24,27,28 Banani",
       "feeder": "Banani Math",
-      "page": 11,
+      "page": 10,
       "intervals": [
         {
           "start": "00:00",
@@ -33404,7 +33272,7 @@
       "division": "Joarshara",
       "area": "Chairmanbari,Mohakhali fly over,kakoli rail gate",
       "feeder": "Chairman Bari",
-      "page": 12,
+      "page": 11,
       "intervals": [
         {
           "start": "00:00",
@@ -36440,7 +36308,7 @@
       "division": "Kafrul",
       "area": "Section-13 /B & C, Sec-14 Part",
       "feeder": "Section 13 Bazar",
-      "page": 13,
+      "page": 12,
       "intervals": [
         {
           "start": "00:00",
@@ -39476,7 +39344,7 @@
       "division": "Khilkhet",
       "area": "Namapara, Koborsthan Road",
       "feeder": "Namapara",
-      "page": 14,
+      "page": 13,
       "intervals": [
         {
           "start": "00:00",
@@ -42512,7 +42380,7 @@
       "division": "Khilkhet",
       "area": "Attota to Amtola main road, Moddapara",
       "feeder": "Bottala",
-      "page": 15,
+      "page": 14,
       "intervals": [
         {
           "start": "00:00",
@@ -45548,7 +45416,7 @@
       "division": "Monipur",
       "area": "Mirpur-1, DIG Road, Kalwalapara, Shahali bagh",
       "feeder": "kalwala para",
-      "page": 16,
+      "page": 15,
       "intervals": [
         {
           "start": "00:00",
@@ -48584,7 +48452,7 @@
       "division": "Pallabi",
       "area": "Road-2 to 12 &Road- 14 to 21, Bl-C, Dha,Ta, Adunik Hospital Road, Sec-12,Mirpur",
       "feeder": "Adunik Hospital",
-      "page": 17,
+      "page": 16,
       "intervals": [
         {
           "start": "00:00",
@@ -51620,7 +51488,7 @@
       "division": "Shah Ali",
       "area": "Mazar Road East, Baten Nagar housing, Sha ali",
       "feeder": "Dakshin Bishil",
-      "page": 18,
+      "page": 17,
       "intervals": [
         {
           "start": "00:00",
@@ -54656,7 +54524,7 @@
       "division": "Shah Kabir",
       "area": "Coatbari, Railgate, Faidabad Madrasha, salma Market",
       "feeder": "Khandaker High School",
-      "page": 19,
+      "page": 18,
       "intervals": [
         {
           "start": "00:00",
@@ -57692,7 +57560,7 @@
       "division": "Tongi Central",
       "area": "Tongi rail gate,Dhaka Tongi Road(part), Modhumita Road",
       "feeder": "Dhaka Tongi Express",
-      "page": 20,
+      "page": 19,
       "intervals": [
         {
           "start": "00:00",
@@ -60728,7 +60596,7 @@
       "division": "Tongi East",
       "area": "Drug International Factory",
       "feeder": "Drug RMU",
-      "page": 21,
+      "page": 20,
       "intervals": [
         {
           "start": "00:00",
@@ -60858,7 +60726,7 @@
     {
       "id": "fdr_alertek",
       "division": "Tongi East",
-      "area": "Azad Biscuit, Alertek, Koborsthan(standby) (40,50,60 No X-former)",
+      "area": "Azad Biscuit, Alertek, Koborsthan(standby) (40,50,60 No X- former)",
       "feeder": "Alertek",
       "page": 21,
       "intervals": [
@@ -60984,7 +60852,7 @@
         }
       ],
       "division_bn": "Tongi East",
-      "area_bn": "Azad Biscuit, Alertek, Koborsthan(standby) (40,50,60 No X-former)",
+      "area_bn": "Azad Biscuit, Alertek, Koborsthan(standby) (40,50,60 No X- former)",
       "feeder_bn": "Alertek"
     },
     {
@@ -63764,7 +63632,7 @@
       "division": "Tongi West",
       "area": "Khapara road",
       "feeder": "Uttar Aouchpara",
-      "page": 22,
+      "page": 21,
       "intervals": [
         {
           "start": "00:00",
@@ -66800,7 +66668,7 @@
       "division": "Turag",
       "area": "BTI complex",
       "feeder": "BTI RMU",
-      "page": 23,
+      "page": 22,
       "intervals": [
         {
           "start": "00:00",
@@ -69836,7 +69704,7 @@
       "division": "Uttara East",
       "area": "Airport Customs, MT Sub-station",
       "feeder": "Sector-1",
-      "page": 24,
+      "page": 23,
       "intervals": [
         {
           "start": "00:00",
@@ -72872,7 +72740,7 @@
       "division": "Uttara West",
       "area": "Sector 15 station 1 area",
       "feeder": "Station 1",
-      "page": 25,
+      "page": 24,
       "intervals": [
         {
           "start": "00:00",
@@ -75908,7 +75776,7 @@
       "division": "Uttarkhan",
       "area": "Pandit Para, Helal Market Road, Dobadia Bazar, Kanchkura",
       "feeder": "Kanchkura",
-      "page": 26,
+      "page": 25,
       "intervals": [
         {
           "start": "00:00",
