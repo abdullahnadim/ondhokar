@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "document_name": "46dc2d1e-dfb6-45be-90ef-903424f9b60a.pdf"
+    "document_name": "95000ff7-746c-4fe7-ad25-11c773eda988.pdf"
   },
   "feeders": [
     {
@@ -400,6 +400,138 @@
       "feeder_bn": "Uttar Shamoly"
     },
     {
+      "id": "fdr_ict_tower",
+      "division": "Agargaon",
+      "area": "Songsod Quarter,ICT Bhaban",
+      "feeder": "ICT Tower",
+      "page": 1,
+      "intervals": [
+        {
+          "start": "00:00",
+          "end": "01:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "01:00",
+          "end": "02:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "02:00",
+          "end": "03:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "03:00",
+          "end": "04:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "04:00",
+          "end": "05:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "05:00",
+          "end": "06:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "06:00",
+          "end": "07:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "07:00",
+          "end": "08:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "08:00",
+          "end": "09:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "09:00",
+          "end": "10:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "10:00",
+          "end": "11:00",
+          "status": "SCHEDULED_OUTAGE"
+        },
+        {
+          "start": "11:00",
+          "end": "12:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "12:00",
+          "end": "13:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "13:00",
+          "end": "14:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "14:00",
+          "end": "15:00",
+          "status": "SCHEDULED_OUTAGE"
+        },
+        {
+          "start": "15:00",
+          "end": "16:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "16:00",
+          "end": "17:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "17:00",
+          "end": "18:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "18:00",
+          "end": "19:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "19:00",
+          "end": "20:00",
+          "status": "SCHEDULED_OUTAGE"
+        },
+        {
+          "start": "20:00",
+          "end": "21:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "21:00",
+          "end": "22:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "22:00",
+          "end": "23:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "23:00",
+          "end": "24:00",
+          "status": "AVAILABLE"
+        }
+      ],
+      "division_bn": "Agargaon",
+      "area_bn": "Songsod Quarter,ICT Bhaban",
+      "feeder_bn": "ICT Tower"
+    },
+    {
       "id": "fdr_lake_view",
       "division": "Agargaon",
       "area": "West Agargaon, 6 Tala Garment, Lake view residential area.",
@@ -596,7 +728,7 @@
         {
           "start": "11:00",
           "end": "12:00",
-          "status": "AVAILABLE"
+          "status": "SCHEDULED_OUTAGE"
         },
         {
           "start": "12:00",
@@ -616,7 +748,7 @@
         {
           "start": "15:00",
           "end": "16:00",
-          "status": "AVAILABLE"
+          "status": "SCHEDULED_OUTAGE"
         },
         {
           "start": "16:00",
@@ -636,12 +768,12 @@
         {
           "start": "19:00",
           "end": "20:00",
-          "status": "SCHEDULED_OUTAGE"
+          "status": "AVAILABLE"
         },
         {
           "start": "20:00",
           "end": "21:00",
-          "status": "AVAILABLE"
+          "status": "SCHEDULED_OUTAGE"
         },
         {
           "start": "21:00",
@@ -656,7 +788,7 @@
         {
           "start": "23:00",
           "end": "24:00",
-          "status": "SCHEDULED_OUTAGE"
+          "status": "AVAILABLE"
         }
       ],
       "division_bn": "Agargaon",
@@ -997,7 +1129,7 @@
         {
           "start": "12:00",
           "end": "13:00",
-          "status": "AVAILABLE"
+          "status": "SCHEDULED_OUTAGE"
         },
         {
           "start": "13:00",
@@ -1190,138 +1322,6 @@
       "division_bn": "Agargaon",
       "area_bn": "Agargaon panirtanki Mor, Taltola Road, West Kafrul, Halim Foundation",
       "feeder_bn": "Mukti Housing"
-    },
-    {
-      "id": "fdr_science_museum",
-      "division": "Agargaon",
-      "area": "BIDS, Science Museum, BNP Bazar, West Agargaon",
-      "feeder": "Science Museum",
-      "page": 1,
-      "intervals": [
-        {
-          "start": "00:00",
-          "end": "01:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "01:00",
-          "end": "02:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "02:00",
-          "end": "03:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "03:00",
-          "end": "04:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "04:00",
-          "end": "05:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "05:00",
-          "end": "06:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "06:00",
-          "end": "07:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "07:00",
-          "end": "08:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "08:00",
-          "end": "09:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "09:00",
-          "end": "10:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "10:00",
-          "end": "11:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "11:00",
-          "end": "12:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "12:00",
-          "end": "13:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "13:00",
-          "end": "14:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "14:00",
-          "end": "15:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "15:00",
-          "end": "16:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "16:00",
-          "end": "17:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "17:00",
-          "end": "18:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "18:00",
-          "end": "19:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "19:00",
-          "end": "20:00",
-          "status": "SCHEDULED_OUTAGE"
-        },
-        {
-          "start": "20:00",
-          "end": "21:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "21:00",
-          "end": "22:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "22:00",
-          "end": "23:00",
-          "status": "SCHEDULED_OUTAGE"
-        },
-        {
-          "start": "23:00",
-          "end": "24:00",
-          "status": "AVAILABLE"
-        }
-      ],
-      "division_bn": "Agargaon",
-      "area_bn": "BIDS, Science Museum, BNP Bazar, West Agargaon",
-      "feeder_bn": "Science Museum"
     },
     {
       "id": "fdr_taltala_bazar",
@@ -10301,7 +10301,7 @@
     },
     {
       "id": "fdr_local",
-      "division": "Dhakkhinkhan",
+      "division": "D.Khan",
       "area": "Airport Radar",
       "feeder": "Local",
       "page": 4,
@@ -10427,7 +10427,7 @@
           "status": "SCHEDULED_OUTAGE"
         }
       ],
-      "division_bn": "Dhakkhinkhan",
+      "division_bn": "D.Khan",
       "area_bn": "Airport Radar",
       "feeder_bn": "Local"
     },
@@ -11547,7 +11547,7 @@
         {
           "start": "10:00",
           "end": "11:00",
-          "status": "AVAILABLE"
+          "status": "SCHEDULED_OUTAGE"
         },
         {
           "start": "11:00",
@@ -11567,7 +11567,7 @@
         {
           "start": "14:00",
           "end": "15:00",
-          "status": "AVAILABLE"
+          "status": "SCHEDULED_OUTAGE"
         },
         {
           "start": "15:00",
@@ -11592,7 +11592,7 @@
         {
           "start": "19:00",
           "end": "20:00",
-          "status": "SCHEDULED_OUTAGE"
+          "status": "AVAILABLE"
         },
         {
           "start": "20:00",
@@ -11618,6 +11618,138 @@
       "division_bn": "Eastern Housing",
       "area_bn": "BUP Area",
       "feeder_bn": "BUP"
+    },
+    {
+      "id": "fdr_mirpur_ceramic",
+      "division": "Eastern Housing",
+      "area": "Eastern Housing Area",
+      "feeder": "Mirpur Ceramic",
+      "page": 4,
+      "intervals": [
+        {
+          "start": "00:00",
+          "end": "01:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "01:00",
+          "end": "02:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "02:00",
+          "end": "03:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "03:00",
+          "end": "04:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "04:00",
+          "end": "05:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "05:00",
+          "end": "06:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "06:00",
+          "end": "07:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "07:00",
+          "end": "08:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "08:00",
+          "end": "09:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "09:00",
+          "end": "10:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "10:00",
+          "end": "11:00",
+          "status": "SCHEDULED_OUTAGE"
+        },
+        {
+          "start": "11:00",
+          "end": "12:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "12:00",
+          "end": "13:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "13:00",
+          "end": "14:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "14:00",
+          "end": "15:00",
+          "status": "SCHEDULED_OUTAGE"
+        },
+        {
+          "start": "15:00",
+          "end": "16:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "16:00",
+          "end": "17:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "17:00",
+          "end": "18:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "18:00",
+          "end": "19:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "19:00",
+          "end": "20:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "20:00",
+          "end": "21:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "21:00",
+          "end": "22:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "22:00",
+          "end": "23:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "23:00",
+          "end": "24:00",
+          "status": "SCHEDULED_OUTAGE"
+        }
+      ],
+      "division_bn": "Eastern Housing",
+      "area_bn": "Eastern Housing Area",
+      "feeder_bn": "Mirpur Ceramic"
     },
     {
       "id": "fdr_mist_rmu",
@@ -11679,7 +11811,7 @@
         {
           "start": "10:00",
           "end": "11:00",
-          "status": "AVAILABLE"
+          "status": "SCHEDULED_OUTAGE"
         },
         {
           "start": "11:00",
@@ -12020,7 +12152,7 @@
       "division": "Eastern Housing",
       "area": "Mi Model School , area behind karitas road",
       "feeder": "MI School",
-      "page": 4,
+      "page": 5,
       "intervals": [
         {
           "start": "00:00",
@@ -12125,7 +12257,7 @@
         {
           "start": "20:00",
           "end": "21:00",
-          "status": "AVAILABLE"
+          "status": "SCHEDULED_OUTAGE"
         },
         {
           "start": "21:00",
@@ -12135,7 +12267,7 @@
         {
           "start": "22:00",
           "end": "23:00",
-          "status": "SCHEDULED_OUTAGE"
+          "status": "AVAILABLE"
         },
         {
           "start": "23:00",
@@ -15056,7 +15188,7 @@
       "division": "Gulshan",
       "area": "Hotel Sheraton, Borak Mehnur Tower and 02 nos HT Consumer beside Hotel Sheraton",
       "feeder": "DNCC RMU",
-      "page": 5,
+      "page": 6,
       "intervals": [
         {
           "start": "00:00",
@@ -18092,7 +18224,7 @@
       "division": "Gulshan",
       "area": "Niketon Housing",
       "feeder": "Niketon Mosque",
-      "page": 6,
+      "page": 7,
       "intervals": [
         {
           "start": "00:00",
@@ -21128,7 +21260,7 @@
       "division": "Gulshan",
       "area": "All Govt. Hospitals & Health Institute",
       "feeder": "Hospital",
-      "page": 7,
+      "page": 8,
       "intervals": [
         {
           "start": "00:00",
@@ -21654,7 +21786,7 @@
     {
       "id": "fdr_banani_park",
       "division": "Gulshan",
-      "area": "Banani: Road-08,Block-C,Block-D Road-11,Block-C,Block- D (South Side)Road-13,Block-C,Block-D",
+      "area": "Banani: Road-08,Block-C,Block-D Road-11,Block- C,Block-D (South Side)Road-13,Block-C,Block-D",
       "feeder": "Banani Park",
       "page": 8,
       "intervals": [
@@ -21780,7 +21912,7 @@
         }
       ],
       "division_bn": "Gulshan",
-      "area_bn": "Banani: Road-08,Block-C,Block-D Road-11,Block-C,Block- D (South Side)Road-13,Block-C,Block-D",
+      "area_bn": "Banani: Road-08,Block-C,Block-D Road-11,Block- C,Block-D (South Side)Road-13,Block-C,Block-D",
       "feeder_bn": "Banani Park"
     },
     {
@@ -24164,7 +24296,7 @@
       "division": "Gulshan",
       "area": "West Merul,Jaman CNG, Progotisoroni",
       "feeder": "South Badda",
-      "page": 8,
+      "page": 9,
       "intervals": [
         {
           "start": "00:00",
@@ -27200,7 +27332,7 @@
       "division": "Ibrahimpur",
       "area": "Mirpur-10 Shahali Market, Senpara, Part of Kazipara",
       "feeder": "Adarsha School",
-      "page": 9,
+      "page": 10,
       "intervals": [
         {
           "start": "00:00",
@@ -30236,7 +30368,7 @@
       "division": "Joarshahara",
       "area": "Roa8,10,11,19, 19/A, B,C, 20,21,22,23, Mosjid Road,Mohakhali",
       "feeder": "Mohakhali CSD",
-      "page": 10,
+      "page": 11,
       "intervals": [
         {
           "start": "00:00",
@@ -33272,7 +33404,7 @@
       "division": "Kafrul",
       "area": "Sectrion-14/B, Bhashantek",
       "feeder": "Bhashantek",
-      "page": 11,
+      "page": 12,
       "intervals": [
         {
           "start": "00:00",
@@ -36308,7 +36440,7 @@
       "division": "Kafrul",
       "area": "Bangla school and college, Mirpur-11",
       "feeder": "Baitus Salat",
-      "page": 12,
+      "page": 13,
       "intervals": [
         {
           "start": "00:00",
@@ -39344,7 +39476,7 @@
       "division": "Khilkhet",
       "area": "Dorji Para, Uttar Para, Khilkhet Bottola, Naya Nagar, Member Bari",
       "feeder": "Uttarpara",
-      "page": 13,
+      "page": 14,
       "intervals": [
         {
           "start": "00:00",
@@ -42380,7 +42512,7 @@
       "division": "Khilkhet",
       "area": "Khapara Road partial, Banorupa R/A",
       "feeder": "Banorupa",
-      "page": 14,
+      "page": 15,
       "intervals": [
         {
           "start": "00:00",
@@ -45416,7 +45548,7 @@
       "division": "Monipur",
       "area": "Kaowalapara R-4, Sha Alibag Area",
       "feeder": "Shah Ali Bag",
-      "page": 15,
+      "page": 16,
       "intervals": [
         {
           "start": "00:00",
@@ -48452,7 +48584,7 @@
       "division": "Pallabi",
       "area": "Kalshi Main Road(North Side),Block-B &Dha, Baitur Nur Jame Mosjid,Sec-12, Mirpur.",
       "feeder": "Kalshi",
-      "page": 16,
+      "page": 17,
       "intervals": [
         {
           "start": "00:00",
@@ -48710,138 +48842,6 @@
       "division_bn": "Pallabi",
       "area_bn": "Kalshi Main Road(South Side),Millat Camp, Muslim Camp,Rahamot Camp,Section-11, Block B, Mirpur",
       "feeder_bn": "Sec-11"
-    },
-    {
-      "id": "fdr_mirpur_ceramic",
-      "division": "Pallabi",
-      "area": "Eastern Housing Area",
-      "feeder": "Mirpur Ceramic",
-      "page": 17,
-      "intervals": [
-        {
-          "start": "00:00",
-          "end": "01:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "01:00",
-          "end": "02:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "02:00",
-          "end": "03:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "03:00",
-          "end": "04:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "04:00",
-          "end": "05:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "05:00",
-          "end": "06:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "06:00",
-          "end": "07:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "07:00",
-          "end": "08:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "08:00",
-          "end": "09:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "09:00",
-          "end": "10:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "10:00",
-          "end": "11:00",
-          "status": "SCHEDULED_OUTAGE"
-        },
-        {
-          "start": "11:00",
-          "end": "12:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "12:00",
-          "end": "13:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "13:00",
-          "end": "14:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "14:00",
-          "end": "15:00",
-          "status": "SCHEDULED_OUTAGE"
-        },
-        {
-          "start": "15:00",
-          "end": "16:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "16:00",
-          "end": "17:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "17:00",
-          "end": "18:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "18:00",
-          "end": "19:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "19:00",
-          "end": "20:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "20:00",
-          "end": "21:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "21:00",
-          "end": "22:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "22:00",
-          "end": "23:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "23:00",
-          "end": "24:00",
-          "status": "SCHEDULED_OUTAGE"
-        }
-      ],
-      "division_bn": "Pallabi",
-      "area_bn": "Eastern Housing Area",
-      "feeder_bn": "Mirpur Ceramic"
     },
     {
       "id": "fdr_grameen_telecom_rmu",
@@ -52253,12 +52253,12 @@
         {
           "start": "20:00",
           "end": "21:00",
-          "status": "SCHEDULED_OUTAGE"
+          "status": "AVAILABLE"
         },
         {
           "start": "21:00",
           "end": "22:00",
-          "status": "AVAILABLE"
+          "status": "SCHEDULED_OUTAGE"
         },
         {
           "start": "22:00",
@@ -52908,12 +52908,12 @@
         {
           "start": "19:00",
           "end": "20:00",
-          "status": "AVAILABLE"
+          "status": "SCHEDULED_OUTAGE"
         },
         {
           "start": "20:00",
           "end": "21:00",
-          "status": "SCHEDULED_OUTAGE"
+          "status": "AVAILABLE"
         },
         {
           "start": "21:00",
@@ -60726,7 +60726,7 @@
     {
       "id": "fdr_alertek",
       "division": "Tongi East",
-      "area": "Azad Biscuit, Alertek, Koborsthan(standby) (40,50,60 No X- former)",
+      "area": "Azad Biscuit, Alertek, Koborsthan(standby) (40,50,60 No X-former)",
       "feeder": "Alertek",
       "page": 21,
       "intervals": [
@@ -60852,7 +60852,7 @@
         }
       ],
       "division_bn": "Tongi East",
-      "area_bn": "Azad Biscuit, Alertek, Koborsthan(standby) (40,50,60 No X- former)",
+      "area_bn": "Azad Biscuit, Alertek, Koborsthan(standby) (40,50,60 No X-former)",
       "feeder_bn": "Alertek"
     },
     {
@@ -64920,12 +64920,144 @@
         {
           "start": "19:00",
           "end": "20:00",
+          "status": "SCHEDULED_OUTAGE"
+        },
+        {
+          "start": "20:00",
+          "end": "21:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "21:00",
+          "end": "22:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "22:00",
+          "end": "23:00",
+          "status": "SCHEDULED_OUTAGE"
+        },
+        {
+          "start": "23:00",
+          "end": "24:00",
+          "status": "AVAILABLE"
+        }
+      ],
+      "division_bn": "Turag",
+      "area_bn": "Sector-11 Road 11 to 14, 16 to 23",
+      "feeder_bn": "Sector-11"
+    },
+    {
+      "id": "fdr_nolvog",
+      "division": "Turag",
+      "area": "A part of Ranavola area",
+      "feeder": "Nolvog",
+      "page": 22,
+      "intervals": [
+        {
+          "start": "00:00",
+          "end": "01:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "01:00",
+          "end": "02:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "02:00",
+          "end": "03:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "03:00",
+          "end": "04:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "04:00",
+          "end": "05:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "05:00",
+          "end": "06:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "06:00",
+          "end": "07:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "07:00",
+          "end": "08:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "08:00",
+          "end": "09:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "09:00",
+          "end": "10:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "10:00",
+          "end": "11:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "11:00",
+          "end": "12:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "12:00",
+          "end": "13:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "13:00",
+          "end": "14:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "14:00",
+          "end": "15:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "15:00",
+          "end": "16:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "16:00",
+          "end": "17:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "17:00",
+          "end": "18:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "18:00",
+          "end": "19:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "19:00",
+          "end": "20:00",
           "status": "AVAILABLE"
         },
         {
           "start": "20:00",
           "end": "21:00",
-          "status": "SCHEDULED_OUTAGE"
+          "status": "AVAILABLE"
         },
         {
           "start": "21:00",
@@ -64940,12 +65072,12 @@
         {
           "start": "23:00",
           "end": "24:00",
-          "status": "SCHEDULED_OUTAGE"
+          "status": "AVAILABLE"
         }
       ],
       "division_bn": "Turag",
-      "area_bn": "Sector-11 Road 11 to 14, 16 to 23",
-      "feeder_bn": "Sector-11"
+      "area_bn": "A part of Ranavola area",
+      "feeder_bn": "Nolvog"
     },
     {
       "id": "fdr_rupayan_city",
@@ -65740,6 +65872,138 @@
       "feeder_bn": "Kapataksa"
     },
     {
+      "id": "fdr_epasport",
+      "division": "Turag",
+      "area": "Turag E passport printing building",
+      "feeder": "E-Pasport",
+      "page": 22,
+      "intervals": [
+        {
+          "start": "00:00",
+          "end": "01:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "01:00",
+          "end": "02:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "02:00",
+          "end": "03:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "03:00",
+          "end": "04:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "04:00",
+          "end": "05:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "05:00",
+          "end": "06:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "06:00",
+          "end": "07:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "07:00",
+          "end": "08:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "08:00",
+          "end": "09:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "09:00",
+          "end": "10:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "10:00",
+          "end": "11:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "11:00",
+          "end": "12:00",
+          "status": "SCHEDULED_OUTAGE"
+        },
+        {
+          "start": "12:00",
+          "end": "13:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "13:00",
+          "end": "14:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "14:00",
+          "end": "15:00",
+          "status": "SCHEDULED_OUTAGE"
+        },
+        {
+          "start": "15:00",
+          "end": "16:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "16:00",
+          "end": "17:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "17:00",
+          "end": "18:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "18:00",
+          "end": "19:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "19:00",
+          "end": "20:00",
+          "status": "SCHEDULED_OUTAGE"
+        },
+        {
+          "start": "20:00",
+          "end": "21:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "21:00",
+          "end": "22:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "22:00",
+          "end": "23:00",
+          "status": "AVAILABLE"
+        },
+        {
+          "start": "23:00",
+          "end": "24:00",
+          "status": "AVAILABLE"
+        }
+      ],
+      "division_bn": "Turag",
+      "area_bn": "Turag E passport printing building",
+      "feeder_bn": "E-Pasport"
+    },
+    {
       "id": "fdr_bgmea_rmu",
       "division": "Turag",
       "area": "BGMEA university, Sarkar bari road, Thana road, Dhour primary School",
@@ -66205,7 +66469,7 @@
         {
           "start": "12:00",
           "end": "13:00",
-          "status": "SCHEDULED_OUTAGE"
+          "status": "AVAILABLE"
         },
         {
           "start": "13:00",
@@ -66220,7 +66484,7 @@
         {
           "start": "15:00",
           "end": "16:00",
-          "status": "SCHEDULED_OUTAGE"
+          "status": "AVAILABLE"
         },
         {
           "start": "16:00",
@@ -66250,7 +66514,7 @@
         {
           "start": "21:00",
           "end": "22:00",
-          "status": "SCHEDULED_OUTAGE"
+          "status": "AVAILABLE"
         },
         {
           "start": "22:00",
@@ -66536,7 +66800,7 @@
       "division": "Turag",
       "area": "Bede potti, Puran Bazar, Hanif Ali Mor, Vatulia, Dhour Chourasta",
       "feeder": "KP High School",
-      "page": 22,
+      "page": 23,
       "intervals": [
         {
           "start": "00:00",
@@ -66668,7 +66932,7 @@
       "division": "Turag",
       "area": "Ashulia road, Vatulia Greenland Hospital, Bottola, taltola, Balur math, Latif CNG pump",
       "feeder": "Ashulia",
-      "page": 22,
+      "page": 23,
       "intervals": [
         {
           "start": "00:00",
@@ -69572,7 +69836,7 @@
       "division": "Uttara East",
       "area": "Libarty Tower, Road-2,Sec-3",
       "feeder": "Libarty Tower",
-      "page": 23,
+      "page": 24,
       "intervals": [
         {
           "start": "00:00",
@@ -69704,7 +69968,7 @@
       "division": "Uttara East",
       "area": "Sec-01, Road-(4-13)",
       "feeder": "Uttara Club",
-      "page": 23,
+      "page": 24,
       "intervals": [
         {
           "start": "00:00",
@@ -71744,7 +72008,7 @@
         {
           "start": "11:00",
           "end": "12:00",
-          "status": "AVAILABLE"
+          "status": "SCHEDULED_OUTAGE"
         },
         {
           "start": "12:00",
@@ -71759,7 +72023,7 @@
         {
           "start": "14:00",
           "end": "15:00",
-          "status": "AVAILABLE"
+          "status": "SCHEDULED_OUTAGE"
         },
         {
           "start": "15:00",
@@ -71789,7 +72053,7 @@
         {
           "start": "20:00",
           "end": "21:00",
-          "status": "AVAILABLE"
+          "status": "SCHEDULED_OUTAGE"
         },
         {
           "start": "21:00",
@@ -72608,7 +72872,7 @@
       "division": "Uttara West",
       "area": "Sector 12 road 1 to 3, 1/A, 2/A, Passport office, Priyanka City, DPS school, Turag S&D office",
       "feeder": "DPS",
-      "page": 24,
+      "page": 25,
       "intervals": [
         {
           "start": "00:00",
@@ -72740,7 +73004,7 @@
       "division": "Uttara West",
       "area": "Baunia bottola to barontek, Hazi Market, bazar, Pabnartek, Aziz Market",
       "feeder": "Bottola",
-      "page": 24,
+      "page": 25,
       "intervals": [
         {
           "start": "00:00",
@@ -75644,7 +75908,7 @@
       "division": "Uttarkhan",
       "area": "Part of moynertek bazzer, Chandpara, traningcenter, part of medical road. masterbari, munda road, alongker more. gudaragut.",
       "feeder": "Chan para",
-      "page": 25,
+      "page": 26,
       "intervals": [
         {
           "start": "00:00",
@@ -75776,7 +76040,7 @@
       "division": "Uttarkhan",
       "area": "Shohid Nogor.",
       "feeder": "Prome RMU",
-      "page": 25,
+      "page": 26,
       "intervals": [
         {
           "start": "00:00",
