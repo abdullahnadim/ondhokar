@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "document_name": "3bbcc571-e6cc-4b7e-b84a-70f4edb3ca3b.pdf"
+    "document_name": "d85d68ef-9f2c-4406-8115-48a27e2f3906.pdf"
   },
   "feeders": [
     {
@@ -6340,138 +6340,6 @@
       "feeder_bn": "KURIL"
     },
     {
-      "id": "fdr_mehedi_mart",
-      "division": "Bashundhara",
-      "area": "Bashundhara Block-E, D & I (Partial)",
-      "feeder": "Mehedi Mart",
-      "page": 4,
-      "intervals": [
-        {
-          "start": "00:00",
-          "end": "01:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "01:00",
-          "end": "02:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "02:00",
-          "end": "03:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "03:00",
-          "end": "04:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "04:00",
-          "end": "05:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "05:00",
-          "end": "06:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "06:00",
-          "end": "07:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "07:00",
-          "end": "08:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "08:00",
-          "end": "09:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "09:00",
-          "end": "10:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "10:00",
-          "end": "11:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "11:00",
-          "end": "12:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "12:00",
-          "end": "13:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "13:00",
-          "end": "14:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "14:00",
-          "end": "15:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "15:00",
-          "end": "16:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "16:00",
-          "end": "17:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "17:00",
-          "end": "18:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "18:00",
-          "end": "19:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "19:00",
-          "end": "20:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "20:00",
-          "end": "21:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "21:00",
-          "end": "22:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "22:00",
-          "end": "23:00",
-          "status": "AVAILABLE"
-        },
-        {
-          "start": "23:00",
-          "end": "24:00",
-          "status": "AVAILABLE"
-        }
-      ],
-      "division_bn": "Bashundhara",
-      "area_bn": "Bashundhara Block-E, D & I (Partial)",
-      "feeder_bn": "Mehedi Mart"
-    },
-    {
       "id": "fdr_basundhara_new",
       "division": "Bashundhara",
       "area": "Block F , D (Part) Bashundhra R/A",
@@ -6872,7 +6740,7 @@
       "division": "Bashundhara",
       "area": "Block-I",
       "feeder": "Block-I",
-      "page": 5,
+      "page": 4,
       "intervals": [
         {
           "start": "00:00",
@@ -8588,7 +8456,7 @@
       "division": "Bashundhara",
       "area": "Bashundhara Block-L, M, N, P",
       "feeder": "Block-L",
-      "page": 6,
+      "page": 5,
       "intervals": [
         {
           "start": "00:00",
@@ -10304,7 +10172,7 @@
       "division": "Dhakkhinkhan",
       "area": "Kaowla Bazar,Shiyalbari,Nordda Para,Taltola,Ashkona Maceer Arot",
       "feeder": "Kawlar",
-      "page": 7,
+      "page": 6,
       "intervals": [
         {
           "start": "00:00",
@@ -12020,7 +11888,7 @@
       "division": "Eastern Housing",
       "area": "Bl-E, Eastern Housing",
       "feeder": "Tamanna Park",
-      "page": 8,
+      "page": 7,
       "intervals": [
         {
           "start": "00:00",
@@ -13736,7 +13604,7 @@
       "division": "Gulshan",
       "area": "Banani: Rd#05(Partly), Microwave Office, BTCL Officers Quarter, Women Hostel, T&T Korail Ansar Camp, T&T Korail Quater, Ershad Playground Area, From T&T Korail",
       "feeder": "Microwave",
-      "page": 9,
+      "page": 8,
       "intervals": [
         {
           "start": "00:00",
@@ -15452,7 +15320,7 @@
       "division": "Gulshan",
       "area": "Gulshan-01: Rd#21, From Gulshan Circle-01 to Rd-28 (Gulshan Avenue Rd, West Side).",
       "feeder": "Lotus Kamal",
-      "page": 10,
+      "page": 9,
       "intervals": [
         {
           "start": "00:00",
@@ -17168,7 +17036,7 @@
       "division": "Gulshan",
       "area": "Gulshan-01: Rd#15, 16, 16/A, 16/B, 23/A, 23/B, 23 (West Side).",
       "feeder": "Road-16",
-      "page": 11,
+      "page": 10,
       "intervals": [
         {
           "start": "00:00",
@@ -18884,7 +18752,7 @@
       "division": "Gulshan",
       "area": "Gulshan-02: Rd#42(Partly), 43(Partly), 46, 47, 48, 49, From Rd#46 to Banani Bridge (Kamal Ataturk Rd, South Side).",
       "feeder": "Central Mosque",
-      "page": 12,
+      "page": 11,
       "intervals": [
         {
           "start": "00:00",
@@ -20334,7 +20202,7 @@
     {
       "id": "fdr_banani_park",
       "division": "Gulshan",
-      "area": "Banani: Road-08,Block-C,Block-D Road-11,Block-C,Block- D (South Side)Road-13,Block-C,Block-D",
+      "area": "Banani: Road-08,Block-C,Block-D Road-11,Block- C,Block-D (South Side)Road-13,Block-C,Block-D",
       "feeder": "Banani Park",
       "page": 12,
       "intervals": [
@@ -20460,7 +20328,7 @@
         }
       ],
       "division_bn": "Gulshan",
-      "area_bn": "Banani: Road-08,Block-C,Block-D Road-11,Block-C,Block- D (South Side)Road-13,Block-C,Block-D",
+      "area_bn": "Banani: Road-08,Block-C,Block-D Road-11,Block- C,Block-D (South Side)Road-13,Block-C,Block-D",
       "feeder_bn": "Banani Park"
     },
     {
@@ -20600,7 +20468,7 @@
       "division": "Gulshan",
       "area": "Banani: Road-08,Block -I,T&T Korail Road,Women collage ,Beltola Bosti",
       "feeder": "Beltota",
-      "page": 13,
+      "page": 12,
       "intervals": [
         {
           "start": "00:00",
@@ -22316,7 +22184,7 @@
       "division": "Gulshan",
       "area": "Banani: Niharika RMU",
       "feeder": "Niharika RMU",
-      "page": 14,
+      "page": 13,
       "intervals": [
         {
           "start": "00:00",
@@ -24032,7 +23900,7 @@
       "division": "Ibrahimpur",
       "area": "East Shewrapara, Doreen Garments",
       "feeder": "Pakar Matha",
-      "page": 15,
+      "page": 14,
       "intervals": [
         {
           "start": "00:00",
@@ -25748,7 +25616,7 @@
       "division": "Ibrahimpur",
       "area": "East Kazipara, Senpara, Police Staff College",
       "feeder": "Senpara",
-      "page": 16,
+      "page": 15,
       "intervals": [
         {
           "start": "00:00",
@@ -27464,7 +27332,7 @@
       "division": "Joarshahara",
       "area": "Banani Quarter, Raod (20-24),Banani,Nam Village",
       "feeder": "Banani Quarter",
-      "page": 17,
+      "page": 16,
       "intervals": [
         {
           "start": "00:00",
@@ -29180,7 +29048,7 @@
       "division": "Joarshahara",
       "area": "Mohakhali DOHS(R-1,2,3,12-18,20)",
       "feeder": "Mohakhali Lake View",
-      "page": 18,
+      "page": 17,
       "intervals": [
         {
           "start": "00:00",
@@ -30896,7 +30764,7 @@
       "division": "Joarshahara",
       "area": "Road -8 to 14, Paka mosjid,united Hospital, AnnanyaShoppingMall",
       "feeder": "DOHS Road-8",
-      "page": 19,
+      "page": 18,
       "intervals": [
         {
           "start": "00:00",
@@ -32612,7 +32480,7 @@
       "division": "Kafrul",
       "area": "Navana City within",
       "feeder": "Navana RMU-1",
-      "page": 20,
+      "page": 19,
       "intervals": [
         {
           "start": "00:00",
@@ -34328,7 +34196,7 @@
       "division": "Kafrul",
       "area": "Avenue-05 Area",
       "feeder": "Ave.-5",
-      "page": 21,
+      "page": 20,
       "intervals": [
         {
           "start": "00:00",
@@ -36044,7 +35912,7 @@
       "division": "Kallyanpur",
       "area": "Ansar camp",
       "feeder": "PWD RMU PAIKPARA",
-      "page": 22,
+      "page": 21,
       "intervals": [
         {
           "start": "00:00",
@@ -37760,7 +37628,7 @@
       "division": "Khilkhet",
       "area": "Nayanagor Area",
       "feeder": "Nayanagor",
-      "page": 23,
+      "page": 22,
       "intervals": [
         {
           "start": "00:00",
@@ -39476,7 +39344,7 @@
       "division": "Khilkhet",
       "area": "Sector-13,14,15,16,26, Police Camp, Army Camp.",
       "feeder": "Sector: 13 (Balu Bridge)",
-      "page": 24,
+      "page": 23,
       "intervals": [
         {
           "start": "00:00",
@@ -41192,7 +41060,7 @@
       "division": "Monipur",
       "area": "West shwarapara, Mollah para, monipur baba huzur Mosjid, Adarsha Road",
       "feeder": "Wasa Road",
-      "page": 25,
+      "page": 24,
       "intervals": [
         {
           "start": "00:00",
@@ -42908,7 +42776,7 @@
       "division": "Monipur",
       "area": "WEST KAZIPARA , EAST MONIPUR",
       "feeder": "PARBOTA",
-      "page": 26,
+      "page": 25,
       "intervals": [
         {
           "start": "00:00",
@@ -44624,7 +44492,7 @@
       "division": "Pallabi",
       "area": "Shopping complex, Sopno Nagor,Bongo Bondhu College, King star Hospital, Sagupta Housing, Pallabi Thana, Bl-D, Sec-12, Mirpur.",
       "feeder": "Shopping Complex",
-      "page": 27,
+      "page": 26,
       "intervals": [
         {
           "start": "00:00",
@@ -46340,7 +46208,7 @@
       "division": "Pallabi",
       "area": "Kalshi Main Road(North Side),Block-B &Dha, Baitur Nur Jame Mosjid,Sec-12, Mirpur.",
       "feeder": "Kalshi",
-      "page": 28,
+      "page": 27,
       "intervals": [
         {
           "start": "00:00",
@@ -48056,7 +47924,7 @@
       "division": "Rupnagar",
       "area": "Block-C, Section-06, Mirpur, Indoor Stadium, Original 10 to Purabi Super Market, Western Side of Begum Rokeya Sarani",
       "feeder": "Nurani",
-      "page": 29,
+      "page": 28,
       "intervals": [
         {
           "start": "00:00",
@@ -49772,7 +49640,7 @@
       "division": "Shah Ali",
       "area": "PWD Staff Quarter Mirpur-1",
       "feeder": "PWD RMU",
-      "page": 30,
+      "page": 29,
       "intervals": [
         {
           "start": "00:00",
@@ -51488,7 +51356,7 @@
       "division": "Shah Kabir",
       "area": "RMU(BTI), Mizaner Garrage, Ark Hospital",
       "feeder": "Chalabon",
-      "page": 31,
+      "page": 30,
       "intervals": [
         {
           "start": "00:00",
@@ -53204,7 +53072,7 @@
       "division": "Tongi Central",
       "area": "Anowar Silk, Station Road, Tongi Rail Station, RTC, Tongi Hospital, Hoque Battery",
       "feeder": "Mill Gate",
-      "page": 32,
+      "page": 31,
       "intervals": [
         {
           "start": "00:00",
@@ -54920,7 +54788,7 @@
       "division": "Tongi Central",
       "area": "Sher-e-bangla rd, amjad ali girls school rd, Tongi Bazar, siraj uddin school rd,",
       "feeder": "Shere - E- Bangla",
-      "page": 33,
+      "page": 32,
       "intervals": [
         {
           "start": "00:00",
@@ -56636,7 +56504,7 @@
       "division": "Tongi East",
       "area": "Bisic industrial area",
       "feeder": "Radiant Pharma",
-      "page": 34,
+      "page": 33,
       "intervals": [
         {
           "start": "00:00",
@@ -58352,7 +58220,7 @@
       "division": "Tongi West",
       "area": "Squib road, Charag ali bus-stand, Asad bapery Road, South Auchpara.",
       "feeder": "Squib",
-      "page": 35,
+      "page": 34,
       "intervals": [
         {
           "start": "00:00",
@@ -60068,7 +59936,7 @@
       "division": "Tongi West",
       "area": "Road Sharif market Road 27",
       "feeder": "Sharif Market",
-      "page": 36,
+      "page": 35,
       "intervals": [
         {
           "start": "00:00",
@@ -61784,7 +61652,7 @@
       "division": "Turag",
       "area": "Fulbaria Main road, Boro Masjid, Dhorongartek, Saitan Market, Ranavola main road",
       "feeder": "Fulbaria",
-      "page": 37,
+      "page": 36,
       "intervals": [
         {
           "start": "00:00",
@@ -63500,7 +63368,7 @@
       "division": "Turag",
       "area": "Sector 16 Part, purankalia, noyanogor chainman bari, tatul tola.",
       "feeder": "Turag",
-      "page": 38,
+      "page": 37,
       "intervals": [
         {
           "start": "00:00",
@@ -65216,7 +65084,7 @@
       "division": "Uttara East",
       "area": "Sector-06,(Road-1,2,3,4,5,6,7,8,9,10)",
       "feeder": "Sector-06",
-      "page": 39,
+      "page": 38,
       "intervals": [
         {
           "start": "00:00",
@@ -66932,7 +66800,7 @@
       "division": "Uttara East",
       "area": "Sec-01, Road-(4-13)",
       "feeder": "Uttara Club",
-      "page": 40,
+      "page": 39,
       "intervals": [
         {
           "start": "00:00",
@@ -68648,7 +68516,7 @@
       "division": "Uttara East",
       "area": "Sec-9, Road no. 7 to 12,Abdullapur. navana Road.",
       "feeder": "Abdullapur",
-      "page": 41,
+      "page": 40,
       "intervals": [
         {
           "start": "00:00",
@@ -70364,7 +70232,7 @@
       "division": "Uttara West",
       "area": "Uludah bazae, tafalia, badaldi, priyanka runway city, World University",
       "feeder": "Uludah",
-      "page": 42,
+      "page": 41,
       "intervals": [
         {
           "start": "00:00",
@@ -72080,7 +71948,7 @@
       "division": "Uttara West",
       "area": "Sector 14 Road 12 to 18, Sector 5 road 2 to 7, 1/A",
       "feeder": "Zohura Market",
-      "page": 43,
+      "page": 42,
       "intervals": [
         {
           "start": "00:00",
